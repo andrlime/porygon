@@ -1,0 +1,3 @@
+mode: "DEV" # DEV, PROD
+app:
+  app_port: 9000
