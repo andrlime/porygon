@@ -2,8 +2,6 @@
 Helper functions to configure Flask app settings
 """
 
-import os
-
 from dotenv import load_dotenv
 from yaml import load, Loader
 

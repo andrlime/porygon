@@ -3,7 +3,6 @@ App factory to create a Flask app object
 """
 
 from flask import Flask
-from flask_cors import cross_origin
 
 from celebi.flask.blueprints import all_blueprints
 
