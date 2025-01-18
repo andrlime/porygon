@@ -4,7 +4,7 @@ App factory to create a Flask app object
 
 from flask import Flask
 
-from celebi.flask.blueprints import all_blueprints
+from celebi.blueprints import all_blueprints
 
 
 def create_flask_app():
@@ -14,9 +14,7 @@ def create_flask_app():
 
     app = Flask(__name__)
 
-    blueprints = all_blueprints()
-
-    for prefix, bp in blueprints:
-        app.register_blueprint(bp, url_prefix=f"/{prefix}")
+    for bp in all_blueprints():
+        app.register_blueprint(bp.blueprint, url_prefix=f"/{bp.path}")
 
     return app
