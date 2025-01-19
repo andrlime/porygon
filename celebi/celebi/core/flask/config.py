@@ -2,10 +2,12 @@
 Helper functions to configure Flask app settings
 """
 
+import os
+
 from dotenv import load_dotenv
 from yaml import load, Loader
 
-from celebi.core.exceptions import ConfigValueError
+from celebi.core.exceptions import ConfigValueError, EnvironmentValueError
 
 
 class AppConfig(object):
@@ -28,6 +30,7 @@ class AppConfig(object):
 
             self.config = {
                 "app_port": self.get_key(app_config, "app_port", "config.yml"),
+                "env": os.environ,
             }
 
     def get_key(self, obj: dict, key: str, place: str):
@@ -35,6 +38,16 @@ class AppConfig(object):
             return obj.get(key)
         except ValueError as e:
             raise ConfigValueError(f"{key} not set in {place}") from e
+
+    def get_environment_variable(self, key: str):
+        try:
+            environ = self.config.get("env")
+            value_of_key = environ.get(key, False)
+            if not value_of_key:
+                raise EnvironmentValueError(f"Key {key} missing in ENV")
+            return environ.get(key)
+        except ValueError as e:
+            raise EnvironmentValueError(f"Environment variable not found") from e
 
     def read_yaml_config_file(self, path: str):
         """
