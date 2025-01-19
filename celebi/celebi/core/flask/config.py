@@ -2,12 +2,10 @@
 Helper functions to configure Flask app settings
 """
 
-import os
-
 from dotenv import load_dotenv
 from yaml import load, Loader
 
-from celebi.exceptions import ConfigValueError
+from celebi.core.exceptions import ConfigValueError
 
 
 class AppConfig(object):

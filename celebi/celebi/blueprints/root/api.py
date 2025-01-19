@@ -6,7 +6,7 @@ from http import HTTPStatus
 from flask import Blueprint  # , request
 from flask_cors import cross_origin
 
-from celebi.util.responses import make_json_response
+from celebi.core.util import make_json_response
 
 
 bp = Blueprint("root", __name__)
