@@ -19,15 +19,16 @@ tasks:
       - poetry run waitress-serve --port=$PORT_NUMBER --call gateway.flask.factory:create_flask_app
   build-dev:
     cmds:
-      - docker build -t andrewli/celebi-api -f docker/DevDockerfile .
+      - docker build -t andrewli2048/celebi-api -f docker/DevDockerfile .
   run-dev:
     cmds:
       - task: build-dev
-      - docker run --rm -p 9000:9000 --name celebi-api andrewli/celebi-api
+      - docker run --rm -p 9000:9000 --name celebi-api andrewli2048/celebi-api
   build-prod:
     cmds:
-      - docker build -t andrewli/celebi-api -f docker/ProdDockerfile .
+      - docker build -t andrewli2048/celebi-api -f docker/ProdDockerfile .
+      - docker push andrewli2048/celebi-api
   run-prod:
     cmds:
       - task: build-prod
-      - docker run --rm -p 9000:9000 --name celebi-api-prod andrewli/celebi-api
+      - docker run --rm -p 9000:9000 --name celebi-api-prod andrewli2048/celebi-api
