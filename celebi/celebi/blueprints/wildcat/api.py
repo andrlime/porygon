@@ -33,7 +33,7 @@ def subscribe_new_email():
         last_name = get_body_field(request_body, "last_name")
         email_address = get_body_field(request_body, "email_address")
     except RequestValueError as e:
-        return make_json_response(e, HTTPStatus.BAD_REQUEST)
+        return make_json_response(str(e), HTTPStatus.BAD_REQUEST)
 
     app_config = AppConfig()
     api_key = app_config.get_environment_variable("MAILCHIMP_API_KEY")
