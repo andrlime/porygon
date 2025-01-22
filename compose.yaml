@@ -1,6 +1,6 @@
 services:
   gateway:
-    image: andrewli/celebi-api
+    image: andrewli2048/celebi-api
     build:
       context: celebi
       dockerfile: docker/DevDockerfile
