@@ -2,13 +2,14 @@
 A struct to represent the score state of the game
 """
 
+from typing import Optional
 from dataclasses import dataclass
 
 
 @dataclass
 class PromptResponsePair:
-    previous_msg: str
-    previous_response: str
+    message: Optional[str]
+    response: Optional[str]
 
     def to_json(self):
         return {
