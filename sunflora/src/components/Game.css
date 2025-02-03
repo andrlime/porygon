@@ -1,0 +1,27 @@
+.the_game {
+    padding: 1rem;
+    width: 100%;
+}
+
+.question {
+    font-weight: 800;
+    margin: 0.5rem;
+}
+
+.response {
+    margin: 0.5rem;
+    text-align: left;
+}
+
+.response_c {
+    margin: 0.5rem;
+}
+
+.response:hover {
+    cursor: pointer;
+}
+
+.stats {
+    text-align: right;
+    margin-top: 1rem;
+}

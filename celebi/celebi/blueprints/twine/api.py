@@ -26,8 +26,8 @@ def prompt():
 
     body
     ----
-    previous_prompt_msg: str
-    previous_prompt_response: str
+    previous_question: str
+    previous_response: str
 
     out
     ---

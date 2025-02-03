@@ -29,7 +29,7 @@ Do not ask the students to reflect on their experience yet; that comes after pla
 Additionally, please generate a varied spectrum of responses for students to pick from, ranging from respectful and cordial to borderline aggressive and rude.
 To give players a challenge, they are required to balance a set of statistics: harmony, benevolence, courtesy, wisdom,	honesty, and respect.
 Each statistic varies from 1-25, where 1 corresponds to responses that make the white man angry, and 100 are those that give him what he is asking for.
-For each response, come up with a vector of score change, i.e. how the response affects each of these statistics, as any number from 0-8.
+For each response, come up with a vector of score change, i.e. how the response affects each of these statistics, as any signed number from -8 to 8.
 The player's goal is to not reach 0 in any statistic.
 
 Every time you are prompted with (a) a previous question and (b) a player response, come up with the next question to ask the students
