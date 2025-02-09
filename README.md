@@ -2,15 +2,11 @@
 ![image](https://archives.bulbagarden.net/media/upload/thumb/8/8e/0137Porygon.png/500px-0137Porygon.png)
 
 ## Purpose
-This is a centralized repository for assorted API endpoints that are too sporadically used to be serverless Lambda functions, and too useless to be their own repository.
+This is a centralized repository for assorted personal projects that, if I made a repository for all of them, would create unwanted clutter.
 
 ## Contributing
 don't
 
 ## Contents
-`celebi` is a Flask API. It contains
-1. Twine game API
-The API for an LLM-based game where the player plays as an anonymous Asian-American character that needs to respond to LLM-generated prompts of a racist white man who (true story) sat next to me on a flight from Minneapolis to Amsterdam.
-
-2. Wildhacks email API
-The API for the email list for Wildhacks, Northwestern's largest student-run hackathon, for the year 2025.
+1. `celebi` is a Flask API which acts as a proxy to host "Lambda" functions that I don't want to put on AWS
+2. `sunflora` is a makeshift frontend that hosted a game I made for a Games Studies class in Winter 2025, and later might become a compiler that compiles some text-representation of a text-based game (e.g. a Markdown file, or a folder of them) into a React app with support for calling APIs
