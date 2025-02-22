@@ -17,7 +17,7 @@ class BlueprintWrapper:
     blueprint: Blueprint
 
 
-def all_blueprints():
+def all_blueprints() -> list[BlueprintWrapper]:
     return [
         BlueprintWrapper(path="", blueprint=root),
         BlueprintWrapper(path="twine", blueprint=twine),

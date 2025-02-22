@@ -3,7 +3,7 @@ API routes for pairings blueprint
 """
 
 from http import HTTPStatus
-from flask import Blueprint, request
+from flask import Blueprint, request, Response
 from flask_cors import cross_origin
 
 from .structs import LLMPrompt, PromptResponsePair
@@ -18,7 +18,7 @@ bp = Blueprint("twine", __name__)
 
 @bp.route("/prompt", methods=["POST"])
 @cross_origin()
-def prompt():
+def prompt() -> Response:
     """
     Generates a prompt for Twine game. Takes the current game state and
     effectively generates the prompt for the next "round" based on

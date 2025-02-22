@@ -8,7 +8,7 @@ from flask_cors import CORS
 from celebi.blueprints import all_blueprints
 
 
-def create_flask_app():
+def create_flask_app() -> Flask:
     """
     Creates a Flask app object
     """

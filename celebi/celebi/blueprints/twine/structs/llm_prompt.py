@@ -15,7 +15,8 @@ class LLMPrompt:
 
     def __init__(self, model: str):
         self.model = model
-        self.client = OpenAI(api_key=AppConfig().get_environment_variable("OPENAI_API_KEY"))
+        api = AppConfig().get_environment_variable("OPENAI_API_KEY")
+        self.client = OpenAI(api_key=api)
 
         self.system_prompt = """
 You are a Asian American studies teacher trying to teach students about Orientalism, and how to live in a world where those of Asian descent face racism, stereotypes,
@@ -46,7 +47,7 @@ and others positive. Be diverse and creative.
 Return a Python-parsable JSON output as raw, plain text.
         """
 
-    def generate(self, previous_prompt: PromptResponsePair):
+    def generate(self, previous_prompt: PromptResponsePair) -> str:
         context_text = """
 This is the first question you are asking. You should ask, verbatim,
 'What's your bloodline'? And randomly generate some possible responses.
@@ -62,7 +63,7 @@ You can either choose to continue this line of questioning or change the topic t
 
         return context_text
 
-    def prompt(self, previous_prompt: PromptResponsePair):
+    def prompt(self, previous_prompt: PromptResponsePair) -> str:
         """
         Prompts the LLM and returns the response
         """
@@ -73,5 +74,8 @@ You can either choose to continue this line of questioning or change the topic t
             ],
             model=self.model,
         )
+
+        if not chat_response.choices[0].message.content:
+            return ""
 
         return chat_response.choices[0].message.content

@@ -4,10 +4,12 @@ Helper functions to process JSON data
 
 import json
 
+from typing import Any
+
 from celebi.core.exceptions import QuestionValueError
 
 
-def remove_backticked_lines(input_str):
+def remove_backticked_lines(input_str: str) -> str:
     """
     Written by ChatGPT
     """
@@ -25,7 +27,7 @@ def remove_backticked_lines(input_str):
     return "\n".join(lines)
 
 
-def validate_json_structure(parsed_json):
+def validate_json_structure(parsed_json: dict[str, Any]) -> bool:
     """
     Written by ChatGPT
     """
@@ -56,7 +58,7 @@ def validate_json_structure(parsed_json):
     return True
 
 
-def jsonify_prompt(prompt_raw: str):
+def jsonify_prompt(prompt_raw: str) -> Any:
     """
     This function (1) removes code ticks, (2) parses into a JSON object, and (3) makes sure all fields exist.
 
@@ -69,5 +71,8 @@ def jsonify_prompt(prompt_raw: str):
     except json.JSONDecodeError as e:
         raise QuestionValueError("Input string is not a valid JSON format.") from e
 
-    if validate_json_structure(parsed_json):
-        return parsed_json
+    if not validate_json_structure(parsed_json):
+        msg = "Input string is valid JSON, but does not contain valid fields"
+        raise QuestionValueError(msg)
+
+    return parsed_json

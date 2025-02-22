@@ -2,12 +2,12 @@
 Helper functions to get stuff out of responses
 """
 
-from flask import jsonify, make_response
+from typing import Any
 
 from celebi.core.exceptions import RequestValueError
 
 
-def get_body_field(body, key: str):
+def get_body_field(body: Any, key: str) -> Any:
     """
     Encode a message into a JSONified response
     """

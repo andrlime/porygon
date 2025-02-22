@@ -2,10 +2,10 @@
 Helper functions to make responses
 """
 
-from flask import jsonify, make_response
+from flask import jsonify, make_response, Response
 
 
-def make_json_response(message, code: int):
+def make_json_response(message: str, code: int) -> Response:
     """
     Encode a message into a JSONified response
     """

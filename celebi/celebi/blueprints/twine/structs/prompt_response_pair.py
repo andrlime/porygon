@@ -11,8 +11,8 @@ class PromptResponsePair:
     message: Optional[str]
     response: Optional[str]
 
-    def to_json(self):
+    def to_json(self) -> dict[Optional[str], Optional[str]]:
         return {
-            "previous_msg": self.previous_msg,
-            "previous_response": self.previous_response,
+            "previous_msg": self.message,
+            "previous_response": self.response,
         }
