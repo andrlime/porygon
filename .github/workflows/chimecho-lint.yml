@@ -1,0 +1,44 @@
+name: "[chimecho/lint] Run pylint, black, mypy, and ruff"
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Install Poetry dependencies
+        working-directory: ./chimecho
+        run: poetry install
+
+      - name: Run pylint on src files
+        working-directory: ./chimecho
+        run: poetry run pylint --rcfile pylintrc .
+      
+      - name: Run mypy on src files
+        working-directory: ./chimecho
+        run: poetry run mypy chimecho
+      
+      - name: Run ruff on src files
+        working-directory: ./chimecho
+        run: poetry run ruff check chimecho
+
+      - name: Run black on src files
+        working-directory: ./chimecho
+        run: poetry run black --line-length 120 .
