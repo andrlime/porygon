@@ -10,3 +10,4 @@ don't
 ## Contents
 1. `celebi` is a Flask API which acts as a proxy to host "Lambda" functions that I don't want to put on AWS
 2. `sunflora` is a makeshift frontend that hosted a game I made for a Games Studies class in Winter 2025, and later might become a compiler that compiles some text-representation of a text-based game (e.g. a Markdown file, or a folder of them) into a React app with support for calling APIs
+3. `chimecho` is a o3-mini written CLI that converts Markdown schedules into a png and html calendar
