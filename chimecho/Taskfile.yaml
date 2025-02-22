@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: "3"
+
+dotenv: [".env"]
+
+tasks:
+  init:
+    cmds:
+      - poetry install
+  lint:
+    cmds:
+      - poetry run pylint --rcfile pylintrc .
+      - poetry run mypy chimecho
+      - poetry run ruff check chimecho
+      - poetry run ruff format --check chimecho
+  lint-diff:
+    cmds:
+      - poetry run ruff format --diff chimecho
+  format:
+    cmds:
+      - poetry run black --line-length 100 .
+      - poetry run ruff check --fix
+  run:
+    cmds:
+      - poetry run python3 -m main

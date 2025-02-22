@@ -1,0 +1,6 @@
+time_start_hour: 8
+time_end_hour: 24
+min_duration_minutes: 45
+default_duration_minutes: 45
+window_width: 1500
+window_height: 1200
