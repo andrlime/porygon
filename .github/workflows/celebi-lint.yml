@@ -1,4 +1,4 @@
-name: "[celebi/lint] Run pylint and black"
+name: "[celebi/lint] Run pylint, black, mypy, and ruff"
 
 on:
   push:
@@ -30,6 +30,14 @@ jobs:
       - name: Run pylint on src files
         working-directory: ./celebi
         run: poetry run pylint --rcfile pylintrc .
+      
+      - name: Run mypy on src files
+        working-directory: ./celebi
+        run: poetry run mypy celebi
+      
+      - name: Run ruff on src files
+        working-directory: ./celebi
+        run: poetry run ruff check celebi
 
       - name: Run black on src files
         working-directory: ./celebi
