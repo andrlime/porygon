@@ -1,3 +1,4 @@
 templates/
 *.html
 *.png
+dist/

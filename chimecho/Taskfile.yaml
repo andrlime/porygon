@@ -24,3 +24,7 @@ tasks:
   run:
     cmds:
       - poetry run python3 -m main
+  build:
+    cmds:
+      - rm -r ./dist
+      - poetry run pyinstaller --onefile --name chimecho main.py

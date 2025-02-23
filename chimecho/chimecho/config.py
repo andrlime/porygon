@@ -3,12 +3,13 @@ Helper functions to configure settings
 """
 
 import logging
+import os
 from typing import Any, Tuple
 
-from yaml import load, Loader
+from yaml import Loader, load
 
-from chimecho.exceptions import ConfigValueError
 from chimecho.cli import CLI
+from chimecho.exceptions import ConfigValueError
 
 
 class AppConfig(object):
@@ -24,7 +25,10 @@ class AppConfig(object):
 
     def __init__(self) -> None:
         if not hasattr(self, "config"):
-            yml_config = self.read_yaml_config_file("config.yaml")
+            path = os.path.expanduser("~/.config/chimecho/chimecho-config.yaml")
+            if not os.path.exists(path):
+                self.write_default_config(path)
+            yml_config = self.read_yaml_config_file(path)
             cli_config = CLI()
 
             self.config = {
@@ -32,6 +36,22 @@ class AppConfig(object):
                 "cli": cli_config.get_parameters(),
             }
         logging.basicConfig(level=logging.INFO)
+
+    def write_default_config(self, path: str) -> None:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+
+        with open(path, "w", encoding="utf-8") as file:
+            file.write(
+                """time_start_hour: 8
+time_end_hour: 24
+min_duration_minutes: 45
+default_duration_minutes: 45
+window_width: 1500
+window_height: 1200
+            """
+            )
+
+        logging.info("Wrote default config file to %s", path)
 
     def get_key(self, dict_name: str, key: str, place: str = "config.yaml") -> Any:
         try:

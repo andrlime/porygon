@@ -3,8 +3,12 @@ name: "[chimecho/lint] Run pylint, black, mypy, and ruff"
 on:
   push:
     branches: ["main"]
+    paths:
+      - "chimecho/**"
   pull_request:
     branches: ["*"]
+    paths:
+      - "chimecho/**"
 
 permissions:
   contents: read

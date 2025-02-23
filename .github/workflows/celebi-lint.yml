@@ -3,8 +3,12 @@ name: "[celebi/lint] Run pylint, black, mypy, and ruff"
 on:
   push:
     branches: ["main"]
+    paths:
+      - "celebi/**"
   pull_request:
     branches: ["*"]
+    paths:
+      - "celebi/**"
 
 permissions:
   contents: read

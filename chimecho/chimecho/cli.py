@@ -2,12 +2,11 @@
 CLI class that reads all arguments and returns a dict for use by any class
 """
 
-from typing import AnyStr
-
 import argparse
 import os
-import sys
 import pathlib
+import sys
+from typing import AnyStr
 
 from chimecho.exceptions import CLIValueError
 
@@ -21,7 +20,7 @@ class CLI:
         parser = argparse.ArgumentParser(
             prog="chimecho",
             description="""
-Parses Markdown template schedules into a weekly schedule PNG
+Parses Markdown template schedules into weekly schedule HTML and PNG files
             """,
         )
 
