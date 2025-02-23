@@ -9,7 +9,7 @@ import os
 import sys
 import pathlib
 
-from chimecho.core.exceptions import CLIValueError
+from chimecho.exceptions import CLIValueError
 
 
 class CLI:

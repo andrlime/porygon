@@ -7,8 +7,8 @@ from typing import Any, Tuple
 
 from yaml import load, Loader
 
-from chimecho.core.exceptions import ConfigValueError
-from chimecho.core.cli import CLI
+from chimecho.exceptions import ConfigValueError
+from chimecho.cli import CLI
 
 
 class AppConfig(object):

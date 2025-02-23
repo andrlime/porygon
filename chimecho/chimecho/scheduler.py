@@ -10,7 +10,7 @@ import logging
 
 from typing import Any
 
-from chimecho.core.config import AppConfig
+from chimecho.config import AppConfig
 
 
 def load_templates(folder: str) -> dict[str, str]:
@@ -103,7 +103,7 @@ def process_template(content: str) -> list[dict[str, Any]]:
     return tasks
 
 
-def generate_week_html(templates: dict[str, str]) -> str:
+def generate_week_html(templates: dict[str, str]) -> None:
     """
     Generates an HTML page for the weekly view.
       - The container fills 100vw x 100vh.
@@ -113,7 +113,7 @@ def generate_week_html(templates: dict[str, str]) -> str:
       - The CSS is loaded from an external file (style.css).
     """
     time_start, time_end, min_duration, _ = AppConfig().get_yaml_values()
-    _, schedule_label, container_height, _ = AppConfig().get_cli_values()
+    _, schedule_label, container_height, output = AppConfig().get_cli_values()
     scale = container_height / (time_end - time_start)  # pixels per minute
 
     week_days = [
@@ -176,4 +176,8 @@ def generate_week_html(templates: dict[str, str]) -> str:
     html_parts.append("</div>")  # end week
     html_parts.append("</div>")  # end container
     html_parts.append("</body></html>")
-    return "\n".join(html_parts)
+
+    combined_html = "\n".join(html_parts)
+    with open(f"{output}.html", "w", encoding="utf-8") as f:
+        f.write(combined_html)
+    logging.info("Weekly schedule generated as %s.html", output)
