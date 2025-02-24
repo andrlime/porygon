@@ -19,7 +19,7 @@ def load_templates(folder: str) -> dict[str, str]:
     """
     templates = {}
     for filename in os.listdir(folder):
-        m = re.match(r"template-(\w+)\.md", filename, re.IGNORECASE)
+        m = re.match(r"(\w+)\.md", filename, re.IGNORECASE)
         if m:
             day_name = m.group(1).capitalize()
             filepath = os.path.join(folder, filename)
