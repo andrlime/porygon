@@ -102,6 +102,114 @@ def process_template(content: str) -> list[dict[str, Any]]:
     return tasks
 
 
+def get_styles_css() -> str:
+    return """
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.schedule-label {
+    font-size: 1.8em;
+    margin: 0.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* Adjusted container height to account for bottom margins */
+.container {
+    width: 100%;
+    /* Original was calc(100vh - 50px), now subtract an extra 10px to avoid overflow */
+    height: calc(100vh - 50px - 10px);
+    display: flex;
+}
+
+.week {
+    flex: 1;
+    display: flex;
+}
+
+.day-column {
+    flex: 1;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    /* height: 100%; */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-header {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.day-timeline {
+    position: relative;
+    flex: 1;
+    background: #fafafa;
+}
+
+.task {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: #e0f7fa;  /* normal tasks: light blue */
+    box-sizing: border-box;
+}
+
+.cancelled {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.tentative {
+    background-color: #ffe0b2;  /* tentative tasks: light orange */
+}
+
+.tentative::after {
+    content: "❓";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    margin-left: 5px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background: #f0f0f0;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.time-span {
+    font-weight: normal;
+}
+    """
+
+
 def generate_week_html(templates: dict[str, str]) -> None:
     """
     Generates an HTML page for the weekly view.
@@ -129,7 +237,9 @@ def generate_week_html(templates: dict[str, str]) -> None:
     html_parts.append("<html><head>")
     html_parts.append("<meta charset='utf-8'>")
     # Link to the external CSS file
-    html_parts.append("<link rel='stylesheet' type='text/css' href='styles.css'>")
+    html_parts.append("<style>")
+    html_parts.append(get_styles_css())
+    html_parts.append("</style>")
     html_parts.append("</head><body>")
     html_parts.append(f"<div class='schedule-label'>{schedule_label}</div>")
     html_parts.append("<div class='container'>")
