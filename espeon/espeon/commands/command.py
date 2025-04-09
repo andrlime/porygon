@@ -21,9 +21,11 @@ class CommandChain:
     def push_back(self, command) -> None:
         self.commands.append(command)
 
+    def to_string(self) -> str:
+        return "; ".join(cmd.to_string() for cmd in self.commands).strip()
+
     def encode(self) -> bytes:
-        joined = "; ".join(cmd.to_string() for cmd in self.commands)
-        return (joined + self.terminator).encode()
+        return (self.to_string() + self.terminator).encode()
 
 
 @dataclass
@@ -41,6 +43,7 @@ class Command:
     command: str
     prefix: str = None
     postfix: str = None
+    terminator: str = "\r"
 
     def to_string(self) -> str:
         cmd = ""
@@ -53,3 +56,6 @@ class Command:
             cmd += f" {self.postfix}"
 
         return cmd.strip()
+
+    def encode(self) -> bytes:
+        return (self.to_string() + self.terminator).encode()

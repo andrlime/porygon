@@ -10,7 +10,7 @@ import logging
 import serial
 
 import espeon.common as constants
-from espeon.commands import CommandChain, CommandList
+from espeon.commands import CommandList  # , CommandChain
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
@@ -32,14 +32,19 @@ class ESP300TranslationStage:
         logger.info("Connected to device %s (%s)", self.device_name, self.serial_number)
         atexit.register(self.close)
 
-
-    def write(self, cmd: bytes):
+    def write(self, command):
         """
         Writes a byte command and returns the decoded string response
+
+        params
+        ------
+        command: Command | CommandChain
         """
-        logger.info("Writing command %s", cmd)
-        self.device.write(cmd)
+        logger.info("Writing command %s", command.to_string())
+
+        self.device.write(command.encode())
         response = self.device.read(constants.MAX_RESPONSE_LEN).decode().strip()
+
         logger.info("Got response %s", response)
         return response
 
@@ -50,28 +55,24 @@ class ESP300TranslationStage:
         logger.info("Closing connection to %s", self.device_name)
         self.device.close()
 
-
+    # Commands start here
     def abort_motion(self):
         """
         AB Stops motion of the translation stage
         """
-        return self.write(CommandChain(
-            CommandList.AbortMotion()
-        ))
+        logger.info("Aborting motion of translation stage")
+        return self.write(CommandList.AbortMotion())
 
     def get_device_name_and_serial_number(self):
         """
         ID Returns device name and serial number as a tuple
         """
-        cmd = CommandChain(
-            CommandList.ID(axis=self.axis)
-        ).encode()
+        response = self.write(CommandList.ID(axis=self.axis))
 
-        response = self.write(cmd)
         response_split = response.split(", ")
         device_name, serial_number = response_split[0], response_split[1]
         logger.debug("Fetched device name %s, serial number %s", device_name, serial_number)
-        
+
         self.device_name = device_name
         self.serial_number = serial_number
         return device_name, serial_number
@@ -80,7 +81,4 @@ class ESP300TranslationStage:
         """
         VER Does a healthcheck/heartbeat check on the device
         """
-        return self.write(CommandChain(
-            CommandList.Heartbeat()
-        ).encode())
-    
+        return self.write(CommandList.Heartbeat())
