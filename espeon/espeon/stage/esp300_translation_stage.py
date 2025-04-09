@@ -1,7 +1,7 @@
 """
 Interface for ESP-300 translation stage
 
-TODO: Consider writing an abstract class for this
+TODO: Consider writing an abstract class for this, like RS232 device
 TODO: Might need to port to C++
 """
 
@@ -10,7 +10,7 @@ import logging
 import serial
 
 import espeon.common as constants
-import espeon.util as utilities
+from espeon.commands import CommandChain, CommandList
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
@@ -26,11 +26,12 @@ class ESP300TranslationStage:
         self.device = serial.Serial(driver_path, baudrate=19200, timeout=1)
         self.axis = axis
 
-        self.write(b"VER\r")
-        self.get_name()
+        self.ping()
+        self.get_device_name_and_serial_number()
 
         logger.info("Connected to device %s (%s)", self.device_name, self.serial_number)
         atexit.register(self.close)
+
 
     def write(self, cmd: bytes):
         """
@@ -49,15 +50,37 @@ class ESP300TranslationStage:
         logger.info("Closing connection to %s", self.device_name)
         self.device.close()
 
-    def get_name(self):
+
+    def abort_motion(self):
         """
-        Returns device name and serial number as a tuple
+        AB Stops motion of the translation stage
         """
-        cmd = utilities.encode_command(f"{self.axis}ID?")
+        return self.write(CommandChain(
+            CommandList.AbortMotion()
+        ))
+
+    def get_device_name_and_serial_number(self):
+        """
+        ID Returns device name and serial number as a tuple
+        """
+        cmd = CommandChain(
+            CommandList.ID(axis=self.axis)
+        ).encode()
+
         response = self.write(cmd)
         response_split = response.split(", ")
         device_name, serial_number = response_split[0], response_split[1]
         logger.debug("Fetched device name %s, serial number %s", device_name, serial_number)
+        
         self.device_name = device_name
         self.serial_number = serial_number
         return device_name, serial_number
+
+    def ping(self):
+        """
+        VER Does a healthcheck/heartbeat check on the device
+        """
+        return self.write(CommandChain(
+            CommandList.Heartbeat()
+        ).encode())
+    
