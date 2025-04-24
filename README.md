@@ -12,3 +12,4 @@ don't
 2. `sunflora` is a makeshift frontend that hosted a game I made for a Games Studies class in Winter 2025, and later might become a compiler that compiles some text-representation of a text-based game (e.g. a Markdown file, or a folder of them) into a React app with support for calling APIs
 3. `chimecho` is a o3-mini written CLI that converts Markdown schedules into a png and html calendar
 4. `espeon` is a Python interface to interact with an ESP-300 translation stage controller via USB instead of RS232 and abstract away the need to manually read and write bytes
+5. `mesprit` is a satirical project to cross correlate Papal birthdays, starsigns, and other astrological data with an LLM estimated conservative score to see if we should elect a pope not based on who the cardinals vote for, but based on starsigns instead.

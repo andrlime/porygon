@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pope-plots"
+version = "0.1.0"
+description = ""
+authors = ["Andrew Li <andrewli@u.northwestern.edu>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+matplotlib = "^3.10.1"
+numpy = "^2.2.5"
+pandas = "^2.2.3"
+polars = "^1.27.1"
+openai = "^1.76.0"
+dotenv = "^0.9.9"
+pyyaml = "^6.0.2"
+tqdm = "^4.67.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
