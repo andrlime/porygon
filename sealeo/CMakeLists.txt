@@ -9,6 +9,7 @@ project(
 
 set(CMAKE_CXX_COMPILER "clang++" CACHE STRING "" FORCE)
 set(CPP_VERSION 23)
+set(CMAKE_CXX_FLAGS "-O3")
 
 # -- Dependencies --
 
