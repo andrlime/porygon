@@ -38,35 +38,35 @@ for p in blank_prompts:
         column_names.append(p[2] + "_sd")
         column_names.append(p[2] + "_sample_size")
     else:  # p[1] == "A"
-        column_names.append(p)
+        column_names.append(p[2])
 
 all_papal_rows = []
-for pope in pope_list.iloc:
-    name = pope.pope_name
-    print(f"Got to pope {name}")
+# for pope in pope_list.iloc:
+#     name = pope.pope_name
+#     print(f"Got to pope {name}")
 
-    url = pope.wikipedia_article_link
-    papal_row = [name, url]
+#     url = pope.wikipedia_article_link
+#     papal_row = [name, url]
 
-    llm_prompts = generate_prompts(name, url)
-    for prompt in llm_prompts:
-        prompt_msg, aggregator, column_name = prompt
-        print(f"\tDoing prompt {column_name}")
+#     llm_prompts = generate_prompts(name, url)
+#     for prompt in llm_prompts:
+#         prompt_msg, aggregator, column_name = prompt
+#         print(f"\tDoing prompt {column_name}")
 
-        consensus_results = consensus(engine, prompt_msg)
+#         consensus_results = consensus(engine, prompt_msg)
 
-        if aggregator == "1":
-            mean, sd, sample_size = quantitative_consensus(consensus_results)
-            papal_row.append(mean)
-            papal_row.append(sd)
-            papal_row.append(sample_size)
-        else:  # "A"
-            agreed_value = qualitative_consensus(engine, consensus_results, prompt_msg)
-            papal_row.append(agreed_value)
+#         if aggregator == "1":
+#             mean, sd, sample_size = quantitative_consensus(consensus_results)
+#             papal_row.append(mean)
+#             papal_row.append(sd)
+#             papal_row.append(sample_size)
+#         else:  # "A"
+#             agreed_value = qualitative_consensus(engine, consensus_results, prompt_msg)
+#             papal_row.append(agreed_value)
 
-    print(f"Got row {papal_row}. Sleeping for 10 seconds before next pope...")
-    time.sleep(10)
-    all_papal_rows.append(papal_row)
+#     print(f"Got row {papal_row}. Sleeping for 10 seconds before next pope...")
+#     time.sleep(10)
+#     all_papal_rows.append(papal_row)
 
 dataframe = pd.DataFrame(all_papal_rows, columns=column_names)
 dataframe.to_csv("popes_data.csv")
