@@ -1,9 +1,6 @@
 #include <types.h>
 
-#include <condition_variable>
-
-#include <iostream>
-#include <mutex>
+#include <memory>
 #include <semaphore>
 
 namespace sealeo {
@@ -14,7 +11,7 @@ class Channel {
     using value_t = T;
 
 private:
-    value_t value;
+    value_t value; // TODO: use std::queue with capacity
     std::binary_semaphore sem_sender_ready{0}, sem_receiver_ready{0};
     bool closed = false;
 
@@ -31,6 +28,7 @@ private:
     }
 
 public:
+    // Returns true if channel is closed, false if open
     inline bool
     is_closed()
     {
@@ -67,6 +65,20 @@ public:
         sem_sender_ready.acquire();
         set_value(val);
         sem_receiver_ready.release();
+    }
+
+    // Overload << operator for channel << value
+    inline void
+    operator<<(const value_t& val)
+    {
+        send(val);
+    }
+
+    // Overload << operator for channel >> value
+    inline void
+    operator>>(value_t& val)
+    {
+        val = recv();
     }
 };
 

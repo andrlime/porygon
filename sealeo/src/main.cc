@@ -1,5 +1,6 @@
 #include <channel/channel.h>
 
+#include <iostream>
 #include <thread>
 #include <vector>
 
@@ -10,7 +11,7 @@ void
 sender(std::vector<T> numbers, std::shared_ptr<Channel<T>> channel)
 {
     for (T elem : numbers) {
-        channel->send(elem);
+        *channel << elem;
     }
 
     channel->close();
@@ -21,8 +22,10 @@ template <typename T>
 void
 receiver(std::shared_ptr<Channel<T>> channel, size_t count)
 {
+    T val;
     while (!channel->is_closed()) {
-        T val = channel->recv();
+        *channel >> val;
+        std::cout << val << "\n";
     }
 
     return;
