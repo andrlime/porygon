@@ -16,30 +16,48 @@ class Channel {
 private:
     value_t value;
     std::binary_semaphore sem_sender_ready{0}, sem_receiver_ready{0};
+    bool closed = false;
 
     inline void
     set_value(const value_t& v)
     {
-        std::cout << "setting value to " << v << std::endl;
         value = v;
     }
 
     inline value_t
     get_value() const
     {
-        std::cout << "reading value of " << value << std::endl;
         return value;
     }
 
 public:
+    inline bool
+    is_closed()
+    {
+        return closed;
+    }
+
+    // Opens the channel. If already open, does nothing.
+    inline void
+    open()
+    {
+        closed = false;
+    }
+
+    // Closes the channel. If already closed, does nothing.
+    inline void
+    close()
+    {
+        closed = true;
+    }
+
     // Reads a value from the channel. If there is no value, blocks until there is one.
     value_t
     recv()
     {
         sem_sender_ready.release();
-        auto result = get_value();
         sem_receiver_ready.acquire();
-        return result;
+        return get_value();
     }
 
     // Writes a value to the channel. Blocks until success.

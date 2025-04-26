@@ -13,6 +13,7 @@ sender(std::vector<T> numbers, std::shared_ptr<Channel<T>> channel)
         channel->send(elem);
     }
 
+    channel->close();
     return;
 }
 
@@ -20,7 +21,7 @@ template <typename T>
 void
 receiver(std::shared_ptr<Channel<T>> channel, size_t count)
 {
-    while (true) {
+    while (!channel->is_closed()) {
         T val = channel->recv();
     }
 
@@ -36,9 +37,7 @@ main()
     std::thread thread1(sender<int>, values, c);
     std::thread thread2(receiver<int>, c, values.size());
 
-    // thread1.join();
-    // thread2.join();
-    while (true) {}
-
+    thread1.join();
+    thread2.join();
     return 0;
 }
