@@ -32,12 +32,6 @@ receiver(std::shared_ptr<Channel<T>> channel, size_t count)
 int
 main()
 {
-#ifdef _LIBCPP_STD_VER
-    std::cout << "_LIBCPP_STD_VER = " << _LIBCPP_STD_VER << "\n";
-#else
-    std::cout << "_LIBCPP_STD_VER is NOT defined\n";
-#endif
-
     auto c = std::make_shared<Channel<int>>();
     std::vector<int> values{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
