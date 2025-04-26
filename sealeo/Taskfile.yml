@@ -21,7 +21,7 @@ tasks:
       - ./sealeo
   lint:
     cmds:
-      - clang-format --Werror --style=file $(find src/ -name '*.cc' -o -name '*.h')
+      - clang-format --dry-run --Werror --style=file $(find src/ -name '*.cc' -o -name '*.h')
   format:
     cmds:
       - clang-format -i --style=file $(find src/ -name '*.cc' -o -name '*.h')

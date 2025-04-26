@@ -2,19 +2,21 @@ name: "[espeon/lint] Run pylint, black"
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "espeon*"]
     paths:
       - "espeon/**"
+      - ".github/workflows/espeon-lint.yml"
   pull_request:
     branches: ["*"]
     paths:
       - "espeon/**"
+      - ".github/workflows/espeon-lint.yml"
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

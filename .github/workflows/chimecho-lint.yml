@@ -2,19 +2,21 @@ name: "[chimecho/lint] Run pylint, black, mypy, and ruff"
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "chimecho*"]
     paths:
       - "chimecho/**"
+      - ".github/workflows/chimecho-lint.yml"
   pull_request:
     branches: ["*"]
     paths:
       - "chimecho/**"
+      - ".github/workflows/chimecho-lint.yml"
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
