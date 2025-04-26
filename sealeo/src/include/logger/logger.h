@@ -1,15 +1,39 @@
+#pragma once
+
 #include <globals.h>
 #include <logger/string_format.h>
 
+#include <concepts>
 #include <ctime>
 
 #include <format>
 #include <iostream>
+#include <sstream>
 
 namespace sealeo {
 
+// concepts
+template <typename T>
+concept Arithmetic = std::is_arithmetic_v<T>;
+
+template <typename T>
+concept StringLike = std::same_as<std::decay_t<T>, std::u16string>
+                     || std::same_as<std::decay_t<T>, std::string>
+                     || std::same_as<std::decay_t<T>, const char*>
+                     || std::same_as<std::decay_t<T>, char*>;
+
+template <typename T>
+concept OStreamable = requires(std::ostream& os, T a) {
+    { os << a } -> std::same_as<std::ostream&>;
+};
+
+template <typename T>
+concept Loggable = Arithmetic<T> || StringLike<T> || OStreamable<T>;
+
+// enum class for message type
 enum class LoggerLevel { DEBUG = 0, INFO, WARN, ERROR, MESSAGE };
 
+// Singleton logger class
 class logger {
 private:
     // Map levels to colorized strings
@@ -38,6 +62,33 @@ private:
     // formatting
     void log(LoggerLevel level, std::string msg);
 
+    // Convert message to a string
+
+    template <OStreamable T>
+    inline std::string
+    convert_msg_to_string(T msg)
+    {
+        std::ostringstream oss;
+        oss << msg;
+        return oss.str();
+    }
+
+    template <StringLike T>
+    requires(!OStreamable<T>)
+    inline std::string
+    convert_msg_to_string(T msg)
+    {
+        return std::string(msg);
+    }
+
+    template <Arithmetic T>
+    requires(!OStreamable<T> && !StringLike<T>)
+    inline std::string
+    convert_msg_to_string(T msg)
+    {
+        return std::to_string(msg);
+    }
+
 public:
     // Constructor and make singleton class
     logger(LoggerLevel level) : current_level_(level) {}
@@ -55,6 +106,7 @@ public:
         return logger_instance;
     }
 
+    // Set the format string to something new using § to encode colors and formatting
     inline void
     set_format_string(std::u16string raw_format_string)
     {
@@ -69,34 +121,39 @@ public:
     }
 
     // Loggers
+    template <Loggable message_t>
     inline void
-    debug(const std::string& msg)
+    debug(const message_t& msg)
     {
-        log(LoggerLevel::DEBUG, msg);
+        log(LoggerLevel::DEBUG, convert_msg_to_string(msg));
     }
 
+    template <Loggable message_t>
     inline void
-    info(const std::string& msg)
+    info(const message_t& msg)
     {
-        log(LoggerLevel::INFO, msg);
+        log(LoggerLevel::INFO, convert_msg_to_string(msg));
     }
 
+    template <Loggable message_t>
     inline void
-    warn(const std::string& msg)
+    warn(const message_t& msg)
     {
-        log(LoggerLevel::WARN, msg);
+        log(LoggerLevel::WARN, convert_msg_to_string(msg));
     }
 
+    template <Loggable message_t>
     inline void
-    error(const std::string& msg)
+    error(const message_t& msg)
     {
-        log(LoggerLevel::ERROR, msg);
+        log(LoggerLevel::ERROR, convert_msg_to_string(msg));
     }
 
+    template <Loggable message_t>
     inline void
-    msg(const std::string& msg)
+    msg(const message_t& msg)
     {
-        log(LoggerLevel::MESSAGE, msg);
+        log(LoggerLevel::MESSAGE, convert_msg_to_string(msg));
     }
 };
 

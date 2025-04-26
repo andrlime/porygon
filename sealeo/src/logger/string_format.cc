@@ -37,12 +37,14 @@ colorize_string(std::u16string str)
 }
 
 std::string
-replace_string(std::string str, std::string key, std::string val)
+replace_string(std::string str, std::vector<std::string> keys, std::string val)
 {
-    std::string match = "%" + key + "%";
-    std::size_t pos = str.find(match);
-    if (pos != std::string::npos) {
-        str.replace(pos, match.length(), val);
+    for (std::string& key : keys) {
+        std::string match = "%" + key + "%";
+        std::size_t pos = str.find(match);
+        if (pos != std::string::npos) {
+            str.replace(pos, match.length(), val);
+        }
     }
     return str;
 }

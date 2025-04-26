@@ -1,6 +1,9 @@
+#pragma once
+
 #include <ranges>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace sealeo {
 namespace format {
@@ -66,7 +69,8 @@ std::string colorize_string(std::u16string str);
 //      replace_string("Apples and fruit", "fruit", "oranges") -> Apples and fruit
 //      replace_string("Apples and %%fruit%%", "%fruit%", "oranges") -> Apples and
 //      oranges
-std::string replace_string(std::string str, std::string key, std::string val);
+std::string
+replace_string(std::string str, std::vector<std::string> keys, std::string val);
 
 } // namespace format
 } // namespace sealeo

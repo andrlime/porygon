@@ -36,10 +36,8 @@ int
 main()
 {
     sealeo::logger logger(sealeo::LoggerLevel::DEBUG);
+    auto c = sealeo::channel<int>::create_buffered_channel(3);
 
-    logger.debug("Hello world");
-
-    auto c = sealeo::channel<int>::create_channel();
     std::vector<int> values{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     std::thread thread1(sender<int>, values, c);
