@@ -1,14 +1,13 @@
 #include <channel/channel.h>
+#include <logger/logger.h>
 
 #include <iostream>
 #include <thread>
 #include <vector>
 
-using sealeo::channel::Channel;
-
 template <typename T>
 void
-sender(std::vector<T> numbers, std::shared_ptr<Channel<T>> channel)
+sender(std::vector<T> numbers, typename sealeo::channel<T>::pointer_t channel)
 {
     for (T elem : numbers) {
         *channel << elem;
@@ -20,12 +19,14 @@ sender(std::vector<T> numbers, std::shared_ptr<Channel<T>> channel)
 
 template <typename T>
 void
-receiver(std::shared_ptr<Channel<T>> channel, size_t count)
+receiver(typename sealeo::channel<T>::pointer_t channel, std::size_t count)
 {
+    sealeo::logger logger(sealeo::LoggerLevel::INFO);
+
     T val;
     while (!channel->is_closed()) {
         *channel >> val;
-        std::cout << val << "\n";
+        logger.info(std::to_string(val));
     }
 
     return;
@@ -34,7 +35,11 @@ receiver(std::shared_ptr<Channel<T>> channel, size_t count)
 int
 main()
 {
-    auto c = std::make_shared<Channel<int>>();
+    sealeo::logger logger(sealeo::LoggerLevel::DEBUG);
+
+    logger.debug("Hello world");
+
+    auto c = sealeo::channel<int>::create_channel();
     std::vector<int> values{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     std::thread thread1(sender<int>, values, c);
