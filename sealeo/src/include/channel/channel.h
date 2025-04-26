@@ -20,12 +20,14 @@ private:
     inline void
     set_value(const value_t& v)
     {
+        std::cout << "setting value to " << v << std::endl;
         value = v;
     }
 
     inline value_t
     get_value() const
     {
+        std::cout << "reading value of " << value << std::endl;
         return value;
     }
 

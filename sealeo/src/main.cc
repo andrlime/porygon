@@ -10,7 +10,6 @@ void
 sender(std::vector<T> numbers, std::shared_ptr<Channel<T>> channel)
 {
     for (T elem : numbers) {
-        std::cout << "Sent " << elem << std::endl;
         channel->send(elem);
     }
 
@@ -23,7 +22,6 @@ receiver(std::shared_ptr<Channel<T>> channel, size_t count)
 {
     while (true) {
         T val = channel->recv();
-        std::cout << "Received " << val << std::endl;
     }
 
     return;
