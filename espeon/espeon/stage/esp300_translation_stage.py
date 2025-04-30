@@ -1,8 +1,5 @@
 """
 Interface for ESP-300 translation stage
-
-TODO: Consider writing an abstract class for this, like RS232 device
-TODO: Might need to port to C++
 """
 
 import atexit
@@ -19,6 +16,8 @@ logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 class ESP300TranslationStage:
     """
     Interface for an ESP-300 translation stage that connects to the device driver, writes bytes, and reads responses
+
+    TODO: Write an abstract RS232Device class
     """
 
     def __init__(self, driver_path: str, axis: int = 1):
@@ -32,13 +31,19 @@ class ESP300TranslationStage:
         logger.info("Connected to device %s (%s)", self.device_name, self.serial_number)
         atexit.register(self.close)
 
-    def write(self, command):
+    def write(self, command: str):
         """
         Writes a byte command and returns the decoded string response
 
-        params
-        ------
+        args
+        ----
         command: Command | CommandChain
+            A string representation of a byte sequence which is encoded
+
+        returns
+        -------
+        response: str
+            The string response from the device with max length MAX_RESPONSE_LEN
         """
         logger.info("Writing command %s", command.to_string())
 
@@ -80,5 +85,7 @@ class ESP300TranslationStage:
     def ping(self):
         """
         VER Does a healthcheck/heartbeat check on the device
+
+        Expect to hear a ping / some other ack from the device
         """
         return self.write(CommandList.Heartbeat())
