@@ -6,13 +6,13 @@ type 'a block_input =
   | SingleBlock of 'a Omd.block
 
 (** [print_block_list (doc : block_input)] Prints an entire markdown AST *)
-let rec print_block_list (block_list : 'a Omd.block list) =
+let rec print_block_list (block_list : 'a Omd.block list) : unit =
   List.iter print_markdown_block block_list
 
-and print_block_list_list (block_list_list : 'a Omd.block list list) =
+and print_block_list_list (block_list_list : 'a Omd.block list list) : unit =
   List.iter print_block_list block_list_list
 
-(** [print_markdown_block (block : 'a Omd.block)] Prints a block markdown element *)
+(** [print_markdown_block 'a Omd.block -> unit] Prints a block markdown element *)
 and print_markdown_block : 'a Omd.block -> unit = function
   | Omd.Paragraph (_, paragraph) -> print_paragraph paragraph
   | Omd.List (_, list_type, list_spacing, list) -> print_list list_type list_spacing list
@@ -26,7 +26,7 @@ and print_markdown_block : 'a Omd.block -> unit = function
   | Omd.Table (_, header_rows, rows) -> print_table header_rows rows
 
 (** [print_paragraph (paragraph: 'a Omd.inline)] Prints a paragraph Omd.block AST node *)
-and print_paragraph (paragraph : 'a Omd.inline) =
+and print_paragraph (paragraph : 'a Omd.inline) : unit =
   Printf.printf "[paragraph] %s" (flatten paragraph)
 
 (** [print_list (list_type : Omd.list_type) (list_spacing : Omd.list_spacing)] Prints a List Omd.block AST node *)
@@ -34,6 +34,7 @@ and print_list
       (list_type : Omd.list_type)
       (list_spacing : Omd.list_spacing)
       (blocks : 'a Omd.block list list)
+  : unit
   =
   let list_type_string =
     match list_type with
@@ -49,24 +50,24 @@ and print_list
   print_block_list_list blocks
 
 (** [print_blockquote (blocks: 'a block list)] Prints a Blockquote Omd.block AST node *)
-and print_blockquote (blocks : 'a Omd.block list) = print_block_list blocks
+and print_blockquote (blocks : 'a Omd.block list) : unit = print_block_list blocks
 
 (** [print_thematic_break ()] Prints a Thematic_break Omd.block AST node *)
-and print_thematic_break () = print_string "\n\n"
+and print_thematic_break () : unit = print_string "\n\n"
 
 (** [print_heading (level: int) (inline: 'a Omd.inline)] Prints a Heading Omd.block AST node *)
-and print_heading (level : int) (inline : 'a Omd.inline) =
+and print_heading (level : int) (inline : 'a Omd.inline) : unit =
   Printf.printf "[H%d] %s" level (flatten inline)
 
 (** [print_code_block (lang: string) (code: string)] Prints a Code_block Omd.block AST node *)
-and print_code_block (lang : string) (code : string) =
+and print_code_block (lang : string) (code : string) : unit =
   Printf.printf "[code:%s] %s" lang code
 
 (** [print_html_block (html: string)] Prints a Html_block Omd.block AST node *)
-and print_html_block (html : string) = Printf.printf "[html] %s" html
+and print_html_block (html : string) : unit = Printf.printf "[html] %s" html
 
 (** [print_definition_list] Prints a Definition_list Omd.block AST node, NOT IMPLEMENTED *)
-and print_definition_list _ = failwith "Definitions list are not implemented"
+and print_definition_list _ : unit = failwith "Definitions list are not implemented"
 
 (** [print_table] Prints a Table Omd.block AST node, NOT IMPLEMENTED *)
-and print_table _ _ = failwith "Tables are not implemented"
+and print_table _ _ : unit = failwith "Tables are not implemented"
