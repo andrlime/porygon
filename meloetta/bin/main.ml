@@ -6,6 +6,6 @@ let parse_single_file (filename : string) =
 ;;
 
 let () =
-  let _ = Io.Read_files.get_md_files "./sample_data" |> List.map @@ parse_single_file in
+  let _ = "./sample_data" |> Io.Read_files.get_md_files |> List.map @@ parse_single_file in
   Printf.printf "Done\n"
 ;;
