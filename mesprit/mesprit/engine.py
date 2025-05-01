@@ -15,13 +15,11 @@ class PapalLLMEngine:
     Can be passed around to prompt the LLM
     """
 
-    def __init__(self, model: str):
+    def __init__(self, model: str, system_prompt: str):
         self.model = model
         api = AppConfig().get_environment_variable("OPENAI_API_KEY")
         self.client = OpenAI(api_key=api)
-        self.system_prompt = """
-You are a historian and political scientist working on a Papal history project with a graduate student. We want to quantitative and qualitatively answer some questions we have about cross-correlations between a set of variables and the pope's conservativeness.
-        """
+        self.system_prompt = system_prompt
 
     def prompt(self, msg: str) -> str:
         """

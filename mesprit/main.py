@@ -1,72 +1,117 @@
 from mesprit.engine import PapalLLMEngine
 from mesprit.consensus import consensus, qualitative_consensus, quantitative_consensus
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from io import StringIO
+import os
 import pandas as pd
 import time
+from collections import defaultdict
 
 pope_list = pd.read_csv("popes.csv")
-engine = PapalLLMEngine("gpt-4o")
+sys_prompt = """
+You are a helpful bot that simulates hunger games between 24 historical popes. We care about the following metrics:
+1. Kills per character (an integer number)
+2. Heroic events (e.g. saving other people) per character (an integer number)
+3. Deaths per character (an integer number)
+4. Whether that character won (either 1 or 0)
 
+Please respond in CSV format with the following header:
+character_name,kills,heroic_events,deaths,win
 
-def generate_prompts(name, url):
-    the_pope = f"Pope {name} ({url})"
+If the character name contains a comma, DO NOT UNDER ANY CIRCUMSTANCES INCLUDE THE COMMA OR YOU WILL BE EXCOMMUNICATED.
 
-    prompt_chinese_zodiac = (
-        f"What was the Chinese Zodiac sign of {the_pope}? Return only the name of the animal. Do not explain."
-    )
-    prompt_birthdate = f"What was the birthdate in mm/dd/yyyy format of {the_pope}? Reference the Wikipedia page. If history does not know, write N/A. Do not explain."
-    prompt_deathdate = f"What was the deathdate in mm/dd/yyyy format of {the_pope}? Reference the Wikipedia page. If history does not know, write N/A. Do not explain."
-    prompt_papacy_start_date = f"What was the papacy start date, i.e. NOT death date, in mm/dd/yyyy format of {the_pope}? Reference the Wikipedia page. Do not explain. Only answer with the date."
-    prompt_western_zodiac = f"What was the Western zodiac star sign of {the_pope}? Reference the Wikipedia page. Do not explain. Just provide a one word answer."
-    prompt_conservative = f"On a scale of 0 to 10000, how conservative was {the_pope}? Reference the Wikipedia page. Report only the number. Do not explain."
+Do not respond with code ticks. Please reply with the raw CSV.
 
-    return [
-        (prompt_chinese_zodiac, "A", "chinese_zodiac"),
-        (prompt_birthdate, "A", "birthdate"),
-        (prompt_deathdate, "A", "deathdate"),
-        (prompt_papacy_start_date, "A", "papacy_start_date"),
-        (prompt_western_zodiac, "A", "western_zodiac"),
-        (prompt_conservative, "1", "conservativeness"),
-    ]
+Finally, after the raw CSV, please add a newline with the following string "THIS IS WHERE THE DATA ENDS" and then another newline.
 
+Afterwards, please append some highlights from the game (e.g. X killed Y, X found fruit in a basket, X jumped off a cliff, etc) consistent with the CSV data.
 
-blank_prompts = generate_prompts("banana", "apple")
-column_names = ["name", "url"]
-for p in blank_prompts:
-    if p[1] == "1":
-        column_names.append(p[2] + "_mean")
-        column_names.append(p[2] + "_sd")
-        column_names.append(p[2] + "_sample_size")
-    else:  # p[1] == "A"
-        column_names.append(p[2])
+The user will provide you with a list of pope names. Use what you know about the popes, e.g. their strength, their political beliefs, etc.
+"""
+sys_prompt = """
+You are a helpful political scientist. The user will provide a Pope name. Using what you know about the pope, gauge how conservative they are on a scale of 1 to 1000000. DO NOT return anything except the final number. NO code ticks, NO weird formatting, NO refusals, JUST RAW DIGITS. Otherwise, YOU WILL BE EXCOMMUNICATED.
 
-all_papal_rows = []
-# for pope in pope_list.iloc:
-#     name = pope.pope_name
-#     print(f"Got to pope {name}")
+Access the given wikipedia URL for more information.
+"""
+engine = PapalLLMEngine("gpt-4.1-nano", sys_prompt)
 
-#     url = pope.wikipedia_article_link
-#     papal_row = [name, url]
+sample_size = 24
+iterations = 3
 
-#     llm_prompts = generate_prompts(name, url)
-#     for prompt in llm_prompts:
-#         prompt_msg, aggregator, column_name = prompt
-#         print(f"\tDoing prompt {column_name}")
+def aggregate_pope_results(folder_path):
+    stats = defaultdict(lambda: {"kills": 0, "heroic_events": 0, "deaths": 0, "win": 0, "games": 0})
 
-#         consensus_results = consensus(engine, prompt_msg)
+    for filename in os.listdir(folder_path):
+        print(filename)
+        if not filename.endswith(".log"):
+            continue
 
-#         if aggregator == "1":
-#             mean, sd, sample_size = quantitative_consensus(consensus_results)
-#             papal_row.append(mean)
-#             papal_row.append(sd)
-#             papal_row.append(sample_size)
-#         else:  # "A"
-#             agreed_value = qualitative_consensus(engine, consensus_results, prompt_msg)
-#             papal_row.append(agreed_value)
+        with open(os.path.join(folder_path, filename), "r") as f:
+            content = f.read()
 
-#     print(f"Got row {papal_row}. Sleeping for 10 seconds before next pope...")
-#     time.sleep(10)
-#     all_papal_rows.append(papal_row)
+        if "THIS IS WHERE THE DATA ENDS" not in content:
+            continue
 
-dataframe = pd.DataFrame(all_papal_rows, columns=column_names)
+        csv_data = content.split("THIS IS WHERE THE DATA ENDS")[0].strip()
+
+        df = pd.read_csv(StringIO(csv_data.strip()))
+        
+        for _, row in df.iterrows():
+            pope = row['character_name']
+            stats[pope]["kills"] += row['kills']
+            stats[pope]["heroic_events"] += row['heroic_events']
+            stats[pope]["deaths"] += row['deaths']
+            stats[pope]["win"] += row['win']
+            stats[pope]["games"] += 1
+
+    # Convert to DataFrame for easier viewing/export
+    final_df = pd.DataFrame([
+        {
+            "character_name": pope,
+            "total_kills": data["kills"],
+            "total_heroic_events": data["heroic_events"],
+            "total_deaths": data["deaths"],
+            "total_wins": data["win"],
+            "games_played": data["games"],
+            "kill_death_ratio": round(data["kills"] / data["deaths"], 2) if data["deaths"] else float("inf"),
+            "heroic_death_ratio": round(data["heroic_events"] / data["deaths"], 2) if data["deaths"] else float("inf"),
+            "win_percentage": round(100 * data["win"] / data["games"], 2) if data["games"] else 0
+        }
+        for pope, data in stats.items()
+    ])
+
+    final_df.to_csv("popes_hunger_games_data.csv")
+
+columns = ["pope_name", "conservativeness_mean", "conservativeness_sd"]
+all_rows = []
+def thread_worker(pope):
+    name = pope.pope_name
+    print(f"pope {name}")
+
+    if os.path.isfile(f"./data/cons/{name}.csv"):
+        with open(f"./data/cons/{name}.csv", "r") as f:
+            d = f.read().split("\n")[1].split(",")
+            mean, sd, sample_size = d[0], d[1], d[2]
+            return [name, mean, sd]
+    
+    url = pope.pope_url
+    papal_row = [name, url]
+
+    results = consensus(engine, f"{name} ({url})")
+    mean, sd, sample_size = quantitative_consensus(results)
+
+    with open(f"./data/cons/{name}.csv", "w") as f:
+        f.write(f"mean,sd,n\n{mean},{sd},{sample_size}\n")
+
+    return [mean, name, sd]
+
+with ThreadPoolExecutor(max_workers=32) as executor:
+    futures = [executor.submit(thread_worker, pope) for pope in pope_list.iloc]
+    for future in as_completed(futures):
+        all_rows.append(future.result())
+
+dataframe = pd.DataFrame(all_rows, columns=columns)
 dataframe.to_csv("popes_data.csv")
+
+# aggregate_pope_results("./data")

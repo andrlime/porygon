@@ -1,216 +1,248 @@
-pope_name,wikipedia_article_link,chinese_zodiac_sign,birthdate,deathdate,sainthood_day,papacy_start_date,western_starsign,conservativeness_score_1000
-Hormisdas,https://en.wikipedia.org/wiki/Pope_Hormisdas,,,,,,,
-John I,https://en.wikipedia.org/wiki/Pope_John_I,,,,,,,
-Felix IV,https://en.wikipedia.org/wiki/Pope_Felix_IV,,,,,,,
-Boniface II,https://en.wikipedia.org/wiki/Pope_Boniface_II,,,,,,,
-John II,https://en.wikipedia.org/wiki/Pope_John_II,,,,,,,
-Agapetus I,https://en.wikipedia.org/wiki/Pope_Agapetus_I,,,,,,,
-Silverius,https://en.wikipedia.org/wiki/Pope_Silverius,,,,,,,
-Vigilius,https://en.wikipedia.org/wiki/Pope_Vigilius,,,,,,,
-Pelagius I,https://en.wikipedia.org/wiki/Pope_Pelagius_I,,,,,,,
-John III,https://en.wikipedia.org/wiki/Pope_John_III,,,,,,,
-Benedict I,https://en.wikipedia.org/wiki/Pope_Benedict_I,,,,,,,
-Pelagius II,https://en.wikipedia.org/wiki/Pope_Pelagius_II,,,,,,,
-Gregory I,https://en.wikipedia.org/wiki/Pope_Gregory_I,,,,,,,
-Sabinian,https://en.wikipedia.org/wiki/Pope_Sabinian,,,,,,,
-Boniface III,https://en.wikipedia.org/wiki/Pope_Boniface_III,,,,,,,
-Boniface IV,https://en.wikipedia.org/wiki/Pope_Boniface_IV,,,,,,,
-Adeodatus I,https://en.wikipedia.org/wiki/Pope_Adeodatus_I,,,,,,,
-Boniface V,https://en.wikipedia.org/wiki/Pope_Boniface_V,,,,,,,
-Honorius I,https://en.wikipedia.org/wiki/Pope_Honorius_I,,,,,,,
-Severinus,https://en.wikipedia.org/wiki/Pope_Severinus,,,,,,,
-John IV,https://en.wikipedia.org/wiki/Pope_John_IV,,,,,,,
-Theodore I,https://en.wikipedia.org/wiki/Pope_Theodore_I,,,,,,,
-Martin I,https://en.wikipedia.org/wiki/Pope_Martin_I,,,,,,,
-Eugene I,https://en.wikipedia.org/wiki/Pope_Eugene_I,,,,,,,
-Vitalian,https://en.wikipedia.org/wiki/Pope_Vitalian,,,,,,,
-Adeodatus II,https://en.wikipedia.org/wiki/Pope_Adeodatus_II,,,,,,,
-Donus,https://en.wikipedia.org/wiki/Pope_Donus,,,,,,,
-Agatho,https://en.wikipedia.org/wiki/Pope_Agatho,,,,,,,
-Leo II,https://en.wikipedia.org/wiki/Pope_Leo_II,,,,,,,
-Benedict II,https://en.wikipedia.org/wiki/Pope_Benedict_II,,,,,,,
-John V,https://en.wikipedia.org/wiki/Pope_John_V,,,,,,,
-Conon,https://en.wikipedia.org/wiki/Pope_Conon,,,,,,,
-Sergius I,https://en.wikipedia.org/wiki/Pope_Sergius_I,,,,,,,
-John VI,https://en.wikipedia.org/wiki/Pope_John_VI,,,,,,,
-John VII,https://en.wikipedia.org/wiki/Pope_John_VII,,,,,,,
-Sisinnius,https://en.wikipedia.org/wiki/Pope_Sisinnius,,,,,,,
-Constantine,https://en.wikipedia.org/wiki/Pope_Constantine,,,,,,,
-Gregory II,https://en.wikipedia.org/wiki/Pope_Gregory_II,,,,,,,
-Gregory III,https://en.wikipedia.org/wiki/Pope_Gregory_III,,,,,,,
-Zachary,https://en.wikipedia.org/wiki/Pope_Zachary,,,,,,,
-elect Stephen,https://en.wikipedia.org/wiki/Pope-elect_Stephen,,,,,,,
-Stephen II,https://en.wikipedia.org/wiki/Pope_Stephen_II,,,,,,,
-Paul I,https://en.wikipedia.org/wiki/Pope_Paul_I,,,,,,,
-Stephen III,https://en.wikipedia.org/wiki/Pope_Stephen_III,,,,,,,
-Adrian I,https://en.wikipedia.org/wiki/Pope_Adrian_I,,,,,,,
-Leo III,https://en.wikipedia.org/wiki/Pope_Leo_III,,,,,,,
-Stephen IV,https://en.wikipedia.org/wiki/Pope_Stephen_IV,,,,,,,
-Paschal I,https://en.wikipedia.org/wiki/Pope_Paschal_I,,,,,,,
-Eugene II,https://en.wikipedia.org/wiki/Pope_Eugene_II,,,,,,,
-Valentine,https://en.wikipedia.org/wiki/Pope_Valentine,,,,,,,
-Gregory IV,https://en.wikipedia.org/wiki/Pope_Gregory_IV,,,,,,,
-Sergius II,https://en.wikipedia.org/wiki/Pope_Sergius_II,,,,,,,
-Leo IV,https://en.wikipedia.org/wiki/Pope_Leo_IV,,,,,,,
-Benedict III,https://en.wikipedia.org/wiki/Pope_Benedict_III,,,,,,,
-Nicholas I,https://en.wikipedia.org/wiki/Pope_Nicholas_I,,,,,,,
-Adrian II,https://en.wikipedia.org/wiki/Pope_Adrian_II,,,,,,,
-John VIII,https://en.wikipedia.org/wiki/Pope_John_VIII,,,,,,,
-Marinus I,https://en.wikipedia.org/wiki/Pope_Marinus_I,,,,,,,
-Adrian III,https://en.wikipedia.org/wiki/Pope_Adrian_III,,,,,,,
-Stephen V,https://en.wikipedia.org/wiki/Pope_Stephen_V,,,,,,,
-Formosus,https://en.wikipedia.org/wiki/Pope_Formosus,,,,,,,
-Boniface VI,https://en.wikipedia.org/wiki/Pope_Boniface_VI,,,,,,,
-Stephen VI,https://en.wikipedia.org/wiki/Pope_Stephen_VI,,,,,,,
-Romanus,https://en.wikipedia.org/wiki/Pope_Romanus,,,,,,,
-Theodore II,https://en.wikipedia.org/wiki/Pope_Theodore_II,,,,,,,
-John IX,https://en.wikipedia.org/wiki/Pope_John_IX,,,,,,,
-Benedict IV,https://en.wikipedia.org/wiki/Pope_Benedict_IV,,,,,,,
-Leo V,https://en.wikipedia.org/wiki/Pope_Leo_V,,,,,,,
-Sergius III,https://en.wikipedia.org/wiki/Pope_Sergius_III,,,,,,,
-Anastasius III,https://en.wikipedia.org/wiki/Pope_Anastasius_III,,,,,,,
-Lando,https://en.wikipedia.org/wiki/Pope_Lando,,,,,,,
-John X,https://en.wikipedia.org/wiki/Pope_John_X,,,,,,,
-Leo VI,https://en.wikipedia.org/wiki/Pope_Leo_VI,,,,,,,
-Stephen VII,https://en.wikipedia.org/wiki/Pope_Stephen_VII,,,,,,,
-John XI,https://en.wikipedia.org/wiki/Pope_John_XI,,,,,,,
-Leo VII,https://en.wikipedia.org/wiki/Pope_Leo_VII,,,,,,,
-Stephen VIII,https://en.wikipedia.org/wiki/Pope_Stephen_VIII,,,,,,,
-Marinus II,https://en.wikipedia.org/wiki/Pope_Marinus_II,,,,,,,
-Agapetus II,https://en.wikipedia.org/wiki/Pope_Agapetus_II,,,,,,,
-John XII,https://en.wikipedia.org/wiki/Pope_John_XII,,,,,,,
-Leo VIII,https://en.wikipedia.org/wiki/Pope_Leo_VIII,,,,,,,
-John XII,https://en.wikipedia.org/wiki/Pope_John_XII,,,,,,,
-Benedict V,https://en.wikipedia.org/wiki/Pope_Benedict_V,,,,,,,
-Leo VIII,https://en.wikipedia.org/wiki/Pope_Leo_VIII,,,,,,,
-John XIII,https://en.wikipedia.org/wiki/Pope_John_XIII,,,,,,,
-Benedict VI,https://en.wikipedia.org/wiki/Pope_Benedict_VI,,,,,,,
-Benedict VII,https://en.wikipedia.org/wiki/Pope_Benedict_VII,,,,,,,
-John XIV,https://en.wikipedia.org/wiki/Pope_John_XIV,,,,,,,
-John XV,https://en.wikipedia.org/wiki/Pope_John_XV,,,,,,,
-Gregory V,https://en.wikipedia.org/wiki/Pope_Gregory_V,,,,,,,
-Sylvester II,https://en.wikipedia.org/wiki/Pope_Sylvester_II,,,,,,,
-John XVII,https://en.wikipedia.org/wiki/Pope_John_XVII,,,,,,,
-John XVIII,https://en.wikipedia.org/wiki/Pope_John_XVIII,,,,,,,
-Sergius IV,https://en.wikipedia.org/wiki/Pope_Sergius_IV,,,,,,,
-Benedict VIII,https://en.wikipedia.org/wiki/Pope_Benedict_VIII,,,,,,,
-John XIX,https://en.wikipedia.org/wiki/Pope_John_XIX,,,,,,,
-Benedict IX,https://en.wikipedia.org/wiki/Pope_Benedict_IX,,,,,,,
-Sylvester III,https://en.wikipedia.org/wiki/Pope_Sylvester_III,,,,,,,
-Benedict IX,https://en.wikipedia.org/wiki/Pope_Benedict_IX,,,,,,,
-Gregory VI,https://en.wikipedia.org/wiki/Pope_Gregory_VI,,,,,,,
-Clement II,https://en.wikipedia.org/wiki/Pope_Clement_II,,,,,,,
-Benedict IX,https://en.wikipedia.org/wiki/Pope_Benedict_IX,,,,,,,
-Damasus II,https://en.wikipedia.org/wiki/Pope_Damasus_II,,,,,,,
-Leo IX,https://en.wikipedia.org/wiki/Pope_Leo_IX,,,,,,,
-Victor II,https://en.wikipedia.org/wiki/Pope_Victor_II,,,,,,,
-Stephen IX,https://en.wikipedia.org/wiki/Pope_Stephen_IX,,,,,,,
-Nicholas II,https://en.wikipedia.org/wiki/Pope_Nicholas_II,,,,,,,
-Alexander II,https://en.wikipedia.org/wiki/Pope_Alexander_II,,,,,,,
-Gregory VII,https://en.wikipedia.org/wiki/Pope_Gregory_VII,,,,,,,
-Victor III,https://en.wikipedia.org/wiki/Pope_Victor_III,,,,,,,
-Urban II,https://en.wikipedia.org/wiki/Pope_Urban_II,,,,,,,
-Paschal II,https://en.wikipedia.org/wiki/Pope_Paschal_II,,,,,,,
-Gelasius II,https://en.wikipedia.org/wiki/Pope_Gelasius_II,,,,,,,
-Callixtus II,https://en.wikipedia.org/wiki/Pope_Callixtus_II,,,,,,,
-Honorius II,https://en.wikipedia.org/wiki/Pope_Honorius_II,,,,,,,
-Innocent II,https://en.wikipedia.org/wiki/Pope_Innocent_II,,,,,,,
-Celestine II,https://en.wikipedia.org/wiki/Pope_Celestine_II,,,,,,,
-Lucius II,https://en.wikipedia.org/wiki/Pope_Lucius_II,,,,,,,
-Eugene III,https://en.wikipedia.org/wiki/Pope_Eugene_III,,,,,,,
-Anastasius IV,https://en.wikipedia.org/wiki/Pope_Anastasius_IV,,,,,,,
-Adrian IV,https://en.wikipedia.org/wiki/Pope_Adrian_IV,,,,,,,
-Alexander III,https://en.wikipedia.org/wiki/Pope_Alexander_III,,,,,,,
-Lucius III,https://en.wikipedia.org/wiki/Pope_Lucius_III,,,,,,,
-Urban III,https://en.wikipedia.org/wiki/Pope_Urban_III,,,,,,,
-Gregory VIII,https://en.wikipedia.org/wiki/Pope_Gregory_VIII,,,,,,,
-Clement III,https://en.wikipedia.org/wiki/Pope_Clement_III,,,,,,,
-Celestine III,https://en.wikipedia.org/wiki/Pope_Celestine_III,,,,,,,
-Innocent III,https://en.wikipedia.org/wiki/Pope_Innocent_III,,,,,,,
-Honorius III,https://en.wikipedia.org/wiki/Pope_Honorius_III,,,,,,,
-Gregory IX,https://en.wikipedia.org/wiki/Pope_Gregory_IX,,,,,,,
-Celestine IV,https://en.wikipedia.org/wiki/Pope_Celestine_IV,,,,,,,
-Innocent IV,https://en.wikipedia.org/wiki/Pope_Innocent_IV,,,,,,,
-Alexander IV,https://en.wikipedia.org/wiki/Pope_Alexander_IV,,,,,,,
-Urban IV,https://en.wikipedia.org/wiki/Pope_Urban_IV,,,,,,,
-Clement IV,https://en.wikipedia.org/wiki/Pope_Clement_IV,,,,,,,
-Gregory X,https://en.wikipedia.org/wiki/Pope_Gregory_X,,,,,,,
-Innocent V,https://en.wikipedia.org/wiki/Pope_Innocent_V,,,,,,,
-Adrian V,https://en.wikipedia.org/wiki/Pope_Adrian_V,,,,,,,
-John XXI,https://en.wikipedia.org/wiki/Pope_John_XXI,,,,,,,
-Nicholas III,https://en.wikipedia.org/wiki/Pope_Nicholas_III,,,,,,,
-Martin IV,https://en.wikipedia.org/wiki/Pope_Martin_IV,,,,,,,
-Honorius IV,https://en.wikipedia.org/wiki/Pope_Honorius_IV,,,,,,,
-Nicholas IV,https://en.wikipedia.org/wiki/Pope_Nicholas_IV,,,,,,,
-Celestine V,https://en.wikipedia.org/wiki/Pope_Celestine_V,,,,,,,
-Boniface VIII,https://en.wikipedia.org/wiki/Pope_Boniface_VIII,,,,,,,
-Benedict XI,https://en.wikipedia.org/wiki/Pope_Benedict_XI,,,,,,,
-Clement V,https://en.wikipedia.org/wiki/Pope_Clement_V,,,,,,,
-John XXII,https://en.wikipedia.org/wiki/Pope_John_XXII,,,,,,,
-Benedict XII,https://en.wikipedia.org/wiki/Pope_Benedict_XII,,,,,,,
-Clement VI,https://en.wikipedia.org/wiki/Pope_Clement_VI,,,,,,,
-Innocent VI,https://en.wikipedia.org/wiki/Pope_Innocent_VI,,,,,,,
-Urban V,https://en.wikipedia.org/wiki/Pope_Urban_V,,,,,,,
-Gregory XI,https://en.wikipedia.org/wiki/Pope_Gregory_XI,,,,,,,
-Urban VI,https://en.wikipedia.org/wiki/Pope_Urban_VI,,,,,,,
-Boniface IX,https://en.wikipedia.org/wiki/Pope_Boniface_IX,,,,,,,
-Innocent VII,https://en.wikipedia.org/wiki/Pope_Innocent_VII,,,,,,,
-Gregory XII,https://en.wikipedia.org/wiki/Pope_Gregory_XII,,,,,,,
-Martin V,https://en.wikipedia.org/wiki/Pope_Martin_V,,,,,,,
-Eugene IV,https://en.wikipedia.org/wiki/Pope_Eugene_IV,,,,,,,
-Nicholas V,https://en.wikipedia.org/wiki/Pope_Nicholas_V,,,,,,,
-Callixtus III,https://en.wikipedia.org/wiki/Pope_Callixtus_III,,,,,,,
-Pius II,https://en.wikipedia.org/wiki/Pope_Pius_II,,,,,,,
-Paul II,https://en.wikipedia.org/wiki/Pope_Paul_II,,,,,,,
-Sixtus IV,https://en.wikipedia.org/wiki/Pope_Sixtus_IV,,,,,,,
-Innocent VIII,https://en.wikipedia.org/wiki/Pope_Innocent_VIII,,,,,,,
-Alexander VI,https://en.wikipedia.org/wiki/Pope_Alexander_VI,,,,,,,
-Pius III,https://en.wikipedia.org/wiki/Pope_Pius_III,,,,,,,
-Julius II,https://en.wikipedia.org/wiki/Pope_Julius_II,,,,,,,
-Leo X,https://en.wikipedia.org/wiki/Pope_Leo_X,,,,,,,
-Adrian VI,https://en.wikipedia.org/wiki/Pope_Adrian_VI,,,,,,,
-Clement VII,https://en.wikipedia.org/wiki/Pope_Clement_VII,,,,,,,
-Paul III,https://en.wikipedia.org/wiki/Pope_Paul_III,,,,,,,
-Julius III,https://en.wikipedia.org/wiki/Pope_Julius_III,,,,,,,
-Marcellus II,https://en.wikipedia.org/wiki/Pope_Marcellus_II,,,,,,,
-Paul IV,https://en.wikipedia.org/wiki/Pope_Paul_IV,,,,,,,
-Pius IV,https://en.wikipedia.org/wiki/Pope_Pius_IV,,,,,,,
-Pius V,https://en.wikipedia.org/wiki/Pope_Pius_V,,,,,,,
-Gregory XIII,https://en.wikipedia.org/wiki/Pope_Gregory_XIII,,,,,,,
-Sixtus V,https://en.wikipedia.org/wiki/Pope_Sixtus_V,,,,,,,
-Urban VII,https://en.wikipedia.org/wiki/Pope_Urban_VII,,,,,,,
-Gregory XIV,https://en.wikipedia.org/wiki/Pope_Gregory_XIV,,,,,,,
-Innocent IX,https://en.wikipedia.org/wiki/Pope_Innocent_IX,,,,,,,
-Clement VIII,https://en.wikipedia.org/wiki/Pope_Clement_VIII,,,,,,,
-Leo XI,https://en.wikipedia.org/wiki/Pope_Leo_XI,,,,,,,
-Paul V,https://en.wikipedia.org/wiki/Pope_Paul_V,,,,,,,
-Gregory XV,https://en.wikipedia.org/wiki/Pope_Gregory_XV,,,,,,,
-Urban VIII,https://en.wikipedia.org/wiki/Pope_Urban_VIII,,,,,,,
-Innocent X,https://en.wikipedia.org/wiki/Pope_Innocent_X,,,,,,,
-Alexander VII,https://en.wikipedia.org/wiki/Pope_Alexander_VII,,,,,,,
-Clement IX,https://en.wikipedia.org/wiki/Pope_Clement_IX,,,,,,,
-Clement X,https://en.wikipedia.org/wiki/Pope_Clement_X,,,,,,,
-Innocent XI,https://en.wikipedia.org/wiki/Pope_Innocent_XI,,,,,,,
-Alexander VIII,https://en.wikipedia.org/wiki/Pope_Alexander_VIII,,,,,,,
-Innocent XII,https://en.wikipedia.org/wiki/Pope_Innocent_XII,,,,,,,
-Clement XI,https://en.wikipedia.org/wiki/Pope_Clement_XI,,,,,,,
-Innocent XIII,https://en.wikipedia.org/wiki/Pope_Innocent_XIII,,,,,,,
-Clement XII,https://en.wikipedia.org/wiki/Pope_Clement_XII,,,,,,,
-Benedict XIV,https://en.wikipedia.org/wiki/Pope_Benedict_XIV,,,,,,,
-Clement XIII,https://en.wikipedia.org/wiki/Pope_Clement_XIII,,,,,,,
-Clement XIV,https://en.wikipedia.org/wiki/Pope_Clement_XIV,,,,,,,
-Pius VI,https://en.wikipedia.org/wiki/Pope_Pius_VI,,,,,,,
-Leo XII,https://en.wikipedia.org/wiki/Pope_Leo_XII,,,,,,,
-Pius VIII,https://en.wikipedia.org/wiki/Pope_Pius_VIII,,,,,,,
-Gregory XVI,https://en.wikipedia.org/wiki/Pope_Gregory_XVI,,,,,,,
-Pius IX,https://en.wikipedia.org/wiki/Pope_Pius_IX,,,,,,,
-Leo XIII,https://en.wikipedia.org/wiki/Pope_Leo_XIII,,,,,,,
-Pius X,https://en.wikipedia.org/wiki/Pope_Pius_X,,,,,,,
-Benedict XV,https://en.wikipedia.org/wiki/Pope_Benedict_XV,,,,,,,
-Pius XI,https://en.wikipedia.org/wiki/Pope_Pius_XI,,,,,,,
-John XXIII,https://en.wikipedia.org/wiki/Pope_John_XXIII,,,,,,,
-Paul VI,https://en.wikipedia.org/wiki/Pope_Paul_VI,,,,,,,
-John Paul I,https://en.wikipedia.org/wiki/Pope_John_Paul_I,,,,,,,
-John Paul II,https://en.wikipedia.org/wiki/Pope_John_Paul_II,,,,,,,
-Benedict XVI,https://en.wikipedia.org/wiki/Pope_Benedict_XVI,,,,,,,
-Francis,https://en.wikipedia.org/wiki/Pope_Francis,,,,,,,
+pope_name,pope_url
+"Pope Hormisdas","https://en.wikipedia.org/wiki/Pope_Hormisdas"
+"Pope John I","https://en.wikipedia.org/wiki/Pope_John_I"
+"Pope Felix IV","https://en.wikipedia.org/wiki/Pope_Felix_IV"
+"Pope Boniface II","https://en.wikipedia.org/wiki/Pope_Boniface_II"
+"Antipope Dioscorus","https://en.wikipedia.org/wiki/Antipope_Dioscorus"
+"Pope John II","https://en.wikipedia.org/wiki/Pope_John_II"
+"Pope Agapetus I","https://en.wikipedia.org/wiki/Pope_Agapetus_I"
+"Pope Silverius","https://en.wikipedia.org/wiki/Pope_Silverius"
+"Pope Vigilius","https://en.wikipedia.org/wiki/Pope_Vigilius"
+"Pope Pelagius I","https://en.wikipedia.org/wiki/Pope_Pelagius_I"
+"Pope John III","https://en.wikipedia.org/wiki/Pope_John_III"
+"Pope Benedict I","https://en.wikipedia.org/wiki/Pope_Benedict_I"
+"Pope Pelagius II","https://en.wikipedia.org/wiki/Pope_Pelagius_II"
+"Pope Gregory I","https://en.wikipedia.org/wiki/Pope_Gregory_I"
+"Pope Sabinian","https://en.wikipedia.org/wiki/Pope_Sabinian"
+"Pope Boniface III","https://en.wikipedia.org/wiki/Pope_Boniface_III"
+"Pope Boniface IV","https://en.wikipedia.org/wiki/Pope_Boniface_IV"
+"Pope Adeodatus I","https://en.wikipedia.org/wiki/Pope_Adeodatus_I"
+"Pope Boniface V","https://en.wikipedia.org/wiki/Pope_Boniface_V"
+"Pope Honorius I","https://en.wikipedia.org/wiki/Pope_Honorius_I"
+"Pope Severinus","https://en.wikipedia.org/wiki/Pope_Severinus"
+"Pope John IV","https://en.wikipedia.org/wiki/Pope_John_IV"
+"Pope Theodore I","https://en.wikipedia.org/wiki/Pope_Theodore_I"
+"Pope Martin I","https://en.wikipedia.org/wiki/Pope_Martin_I"
+"Pope Eugene I","https://en.wikipedia.org/wiki/Pope_Eugene_I"
+"Pope Vitalian","https://en.wikipedia.org/wiki/Pope_Vitalian"
+"Pope Adeodatus II","https://en.wikipedia.org/wiki/Pope_Adeodatus_II"
+"Pope Donus","https://en.wikipedia.org/wiki/Pope_Donus"
+"Pope Agatho","https://en.wikipedia.org/wiki/Pope_Agatho"
+"Pope Leo II","https://en.wikipedia.org/wiki/Pope_Leo_II"
+"Pope Benedict II","https://en.wikipedia.org/wiki/Pope_Benedict_II"
+"Pope John V","https://en.wikipedia.org/wiki/Pope_John_V"
+"Pope Conon","https://en.wikipedia.org/wiki/Pope_Conon"
+"Pope Sergius I","https://en.wikipedia.org/wiki/Pope_Sergius_I"
+"Pope John VI","https://en.wikipedia.org/wiki/Pope_John_VI"
+"Pope John VII","https://en.wikipedia.org/wiki/Pope_John_VII"
+"Pope Sisinnius","https://en.wikipedia.org/wiki/Pope_Sisinnius"
+"Pope Constantine","https://en.wikipedia.org/wiki/Pope_Constantine"
+"Pope Gregory II","https://en.wikipedia.org/wiki/Pope_Gregory_II"
+"Pope Gregory III","https://en.wikipedia.org/wiki/Pope_Gregory_III"
+"Pope Zachary","https://en.wikipedia.org/wiki/Pope_Zachary"
+"Pope-elect Stephen","https://en.wikipedia.org/wiki/Pope-elect_Stephen"
+"Pope Stephen II","https://en.wikipedia.org/wiki/Pope_Stephen_II"
+"Pope Paul I","https://en.wikipedia.org/wiki/Pope_Paul_I"
+"Pope Stephen III","https://en.wikipedia.org/wiki/Pope_Stephen_III"
+"Pope Adrian I","https://en.wikipedia.org/wiki/Pope_Adrian_I"
+"Pope Leo III","https://en.wikipedia.org/wiki/Pope_Leo_III"
+"Pope Stephen IV","https://en.wikipedia.org/wiki/Pope_Stephen_IV"
+"Pope Paschal I","https://en.wikipedia.org/wiki/Pope_Paschal_I"
+"Pope Eugene II","https://en.wikipedia.org/wiki/Pope_Eugene_II"
+"Pope Valentine","https://en.wikipedia.org/wiki/Pope_Valentine"
+"Pope Gregory IV","https://en.wikipedia.org/wiki/Pope_Gregory_IV"
+"Pope Sergius II","https://en.wikipedia.org/wiki/Pope_Sergius_II"
+"Pope Leo IV","https://en.wikipedia.org/wiki/Pope_Leo_IV"
+"Pope Benedict III","https://en.wikipedia.org/wiki/Pope_Benedict_III"
+"Pope Nicholas I","https://en.wikipedia.org/wiki/Pope_Nicholas_I"
+"Pope Adrian II","https://en.wikipedia.org/wiki/Pope_Adrian_II"
+"Pope John VIII","https://en.wikipedia.org/wiki/Pope_John_VIII"
+"Pope Marinus I","https://en.wikipedia.org/wiki/Pope_Marinus_I"
+"Pope Adrian III","https://en.wikipedia.org/wiki/Pope_Adrian_III"
+"Pope Stephen V","https://en.wikipedia.org/wiki/Pope_Stephen_V"
+"Pope Formosus","https://en.wikipedia.org/wiki/Pope_Formosus"
+"Pope Boniface VI","https://en.wikipedia.org/wiki/Pope_Boniface_VI"
+"Pope Stephen VI","https://en.wikipedia.org/wiki/Pope_Stephen_VI"
+"Pope Romanus","https://en.wikipedia.org/wiki/Pope_Romanus"
+"Pope Theodore II","https://en.wikipedia.org/wiki/Pope_Theodore_II"
+"Pope John IX","https://en.wikipedia.org/wiki/Pope_John_IX"
+"Pope Benedict IV","https://en.wikipedia.org/wiki/Pope_Benedict_IV"
+"Pope Leo V","https://en.wikipedia.org/wiki/Pope_Leo_V"
+"Antipope Christopher","https://en.wikipedia.org/wiki/Antipope_Christopher"
+"Pope Sergius III","https://en.wikipedia.org/wiki/Pope_Sergius_III"
+"Pope Anastasius III","https://en.wikipedia.org/wiki/Pope_Anastasius_III"
+"Pope Lando","https://en.wikipedia.org/wiki/Pope_Lando"
+"Pope John X","https://en.wikipedia.org/wiki/Pope_John_X"
+"Pope Leo VI","https://en.wikipedia.org/wiki/Pope_Leo_VI"
+"Pope Stephen VII","https://en.wikipedia.org/wiki/Pope_Stephen_VII"
+"Pope John XI","https://en.wikipedia.org/wiki/Pope_John_XI"
+"Pope Leo VII","https://en.wikipedia.org/wiki/Pope_Leo_VII"
+"Pope Stephen VIII","https://en.wikipedia.org/wiki/Pope_Stephen_VIII"
+"Pope Marinus II","https://en.wikipedia.org/wiki/Pope_Marinus_II"
+"Pope Agapetus II","https://en.wikipedia.org/wiki/Pope_Agapetus_II"
+"Pope John XII","https://en.wikipedia.org/wiki/Pope_John_XII"
+"Pope Leo VIII","https://en.wikipedia.org/wiki/Pope_Leo_VIII"
+"Pope John XII","https://en.wikipedia.org/wiki/Pope_John_XII"
+"Pope Benedict V","https://en.wikipedia.org/wiki/Pope_Benedict_V"
+"Pope Leo VIII","https://en.wikipedia.org/wiki/Pope_Leo_VIII"
+"Pope John XIII","https://en.wikipedia.org/wiki/Pope_John_XIII"
+"Pope Benedict VI","https://en.wikipedia.org/wiki/Pope_Benedict_VI"
+"Antipope Boniface VII","https://en.wikipedia.org/wiki/Antipope_Boniface_VII"
+"Pope Benedict VII","https://en.wikipedia.org/wiki/Pope_Benedict_VII"
+"Pope John XIV","https://en.wikipedia.org/wiki/Pope_John_XIV"
+"Antipope Boniface VII","https://en.wikipedia.org/wiki/Antipope_Boniface_VII"
+"Pope John XV","https://en.wikipedia.org/wiki/Pope_John_XV"
+"Pope Gregory V","https://en.wikipedia.org/wiki/Pope_Gregory_V"
+"Antipope John XVI","https://en.wikipedia.org/wiki/Antipope_John_XVI"
+"Pope Sylvester II","https://en.wikipedia.org/wiki/Pope_Sylvester_II"
+"Pope John XVII","https://en.wikipedia.org/wiki/Pope_John_XVII"
+"Pope John XVIII","https://en.wikipedia.org/wiki/Pope_John_XVIII"
+"Pope Sergius IV","https://en.wikipedia.org/wiki/Pope_Sergius_IV"
+"Antipope Gregory VI","https://en.wikipedia.org/wiki/Antipope_Gregory_VI"
+"Pope Benedict VIII","https://en.wikipedia.org/wiki/Pope_Benedict_VIII"
+"Pope John XIX","https://en.wikipedia.org/wiki/Pope_John_XIX"
+"Pope Benedict IX","https://en.wikipedia.org/wiki/Pope_Benedict_IX"
+"Pope Sylvester III","https://en.wikipedia.org/wiki/Pope_Sylvester_III"
+"Pope Benedict IX","https://en.wikipedia.org/wiki/Pope_Benedict_IX"
+"Pope Gregory VI","https://en.wikipedia.org/wiki/Pope_Gregory_VI"
+"Pope Clement II","https://en.wikipedia.org/wiki/Pope_Clement_II"
+"Pope Benedict IX","https://en.wikipedia.org/wiki/Pope_Benedict_IX"
+"Pope Damasus II","https://en.wikipedia.org/wiki/Pope_Damasus_II"
+"Pope Leo IX","https://en.wikipedia.org/wiki/Pope_Leo_IX"
+"Pope Victor II","https://en.wikipedia.org/wiki/Pope_Victor_II"
+"Pope Stephen IX","https://en.wikipedia.org/wiki/Pope_Stephen_IX"
+"Antipope Benedict X","https://en.wikipedia.org/wiki/Antipope_Benedict_X"
+"Pope Nicholas II","https://en.wikipedia.org/wiki/Pope_Nicholas_II"
+"Antipope Honorius II","https://en.wikipedia.org/wiki/Antipope_Honorius_II"
+"Pope Alexander II","https://en.wikipedia.org/wiki/Pope_Alexander_II"
+"Pope Gregory VII","https://en.wikipedia.org/wiki/Pope_Gregory_VII"
+"Antipope Clement III","https://en.wikipedia.org/wiki/Antipope_Clement_III"
+"Pope Victor III","https://en.wikipedia.org/wiki/Pope_Victor_III"
+"Pope Urban II","https://en.wikipedia.org/wiki/Pope_Urban_II"
+"Pope Paschal II","https://en.wikipedia.org/wiki/Pope_Paschal_II"
+"Antipope Theodoric","https://en.wikipedia.org/wiki/Antipope_Theodoric"
+"Antipope Adalbert","https://en.wikipedia.org/wiki/Antipope_Adalbert"
+"Antipope Sylvester IV","https://en.wikipedia.org/wiki/Antipope_Sylvester_IV"
+"Pope Gelasius II","https://en.wikipedia.org/wiki/Pope_Gelasius_II"
+"Antipope Gregory VIII","https://en.wikipedia.org/wiki/Antipope_Gregory_VIII"
+"Pope Callixtus II","https://en.wikipedia.org/wiki/Pope_Callixtus_II"
+"Teobaldo Boccapecci","https://en.wikipedia.org/wiki/Teobaldo_Boccapecci"
+"Pope Honorius II","https://en.wikipedia.org/wiki/Pope_Honorius_II"
+"Pope Innocent II","https://en.wikipedia.org/wiki/Pope_Innocent_II"
+"Antipope Anacletus II","https://en.wikipedia.org/wiki/Antipope_Anacletus_II"
+"Antipope Victor IV (1138)","https://en.wikipedia.org/wiki/Antipope_Victor_IV_(1138)"
+"Pope Celestine II","https://en.wikipedia.org/wiki/Pope_Celestine_II"
+"Pope Lucius II","https://en.wikipedia.org/wiki/Pope_Lucius_II"
+"Pope Eugene III","https://en.wikipedia.org/wiki/Pope_Eugene_III"
+"Pope Anastasius IV","https://en.wikipedia.org/wiki/Pope_Anastasius_IV"
+"Pope Adrian IV","https://en.wikipedia.org/wiki/Pope_Adrian_IV"
+"Pope Alexander III","https://en.wikipedia.org/wiki/Pope_Alexander_III"
+"Antipope Victor IV (1159–1164)","https://en.wikipedia.org/wiki/Antipope_Victor_IV_(1159%E2%80%931164)"
+"Antipope Paschal III","https://en.wikipedia.org/wiki/Antipope_Paschal_III"
+"Antipope Callixtus III","https://en.wikipedia.org/wiki/Antipope_Callixtus_III"
+"Antipope Innocent III","https://en.wikipedia.org/wiki/Antipope_Innocent_III"
+"Pope Lucius III","https://en.wikipedia.org/wiki/Pope_Lucius_III"
+"Pope Urban III","https://en.wikipedia.org/wiki/Pope_Urban_III"
+"Pope Gregory VIII","https://en.wikipedia.org/wiki/Pope_Gregory_VIII"
+"Pope Clement III","https://en.wikipedia.org/wiki/Pope_Clement_III"
+"Pope Celestine III","https://en.wikipedia.org/wiki/Pope_Celestine_III"
+"Pope Innocent III","https://en.wikipedia.org/wiki/Pope_Innocent_III"
+"Pope Honorius III","https://en.wikipedia.org/wiki/Pope_Honorius_III"
+"Pope Gregory IX","https://en.wikipedia.org/wiki/Pope_Gregory_IX"
+"Pope Celestine IV","https://en.wikipedia.org/wiki/Pope_Celestine_IV"
+"Pope Innocent IV","https://en.wikipedia.org/wiki/Pope_Innocent_IV"
+"Pope Alexander IV","https://en.wikipedia.org/wiki/Pope_Alexander_IV"
+"Pope Urban IV","https://en.wikipedia.org/wiki/Pope_Urban_IV"
+"Pope Clement IV","https://en.wikipedia.org/wiki/Pope_Clement_IV"
+"Pope Gregory X","https://en.wikipedia.org/wiki/Pope_Gregory_X"
+"Pope Innocent V","https://en.wikipedia.org/wiki/Pope_Innocent_V"
+"Pope Adrian V","https://en.wikipedia.org/wiki/Pope_Adrian_V"
+"Pope John XXI","https://en.wikipedia.org/wiki/Pope_John_XXI"
+"Pope Nicholas III","https://en.wikipedia.org/wiki/Pope_Nicholas_III"
+"Pope Martin IV","https://en.wikipedia.org/wiki/Pope_Martin_IV"
+"Pope Honorius IV","https://en.wikipedia.org/wiki/Pope_Honorius_IV"
+"Pope Nicholas IV","https://en.wikipedia.org/wiki/Pope_Nicholas_IV"
+"Pope Celestine V","https://en.wikipedia.org/wiki/Pope_Celestine_V"
+"Pope Boniface VIII","https://en.wikipedia.org/wiki/Pope_Boniface_VIII"
+"Pope Benedict XI","https://en.wikipedia.org/wiki/Pope_Benedict_XI"
+"Pope Clement V","https://en.wikipedia.org/wiki/Pope_Clement_V"
+"Pope John XXII","https://en.wikipedia.org/wiki/Pope_John_XXII"
+"Antipope Nicholas V","https://en.wikipedia.org/wiki/Antipope_Nicholas_V"
+"Pope Benedict XII","https://en.wikipedia.org/wiki/Pope_Benedict_XII"
+"Pope Clement VI","https://en.wikipedia.org/wiki/Pope_Clement_VI"
+"Pope Innocent VI","https://en.wikipedia.org/wiki/Pope_Innocent_VI"
+"Pope Urban V","https://en.wikipedia.org/wiki/Pope_Urban_V"
+"Pope Gregory XI","https://en.wikipedia.org/wiki/Pope_Gregory_XI"
+"Pope Urban VI","https://en.wikipedia.org/wiki/Pope_Urban_VI"
+"Antipope Clement VII","https://en.wikipedia.org/wiki/Antipope_Clement_VII"
+"Antipope Benedict XIII","https://en.wikipedia.org/wiki/Antipope_Benedict_XIII"
+"Pope Boniface IX","https://en.wikipedia.org/wiki/Pope_Boniface_IX"
+"Pope Innocent VII","https://en.wikipedia.org/wiki/Pope_Innocent_VII"
+"Pope Gregory XII","https://en.wikipedia.org/wiki/Pope_Gregory_XII"
+"Antipope Alexander V","https://en.wikipedia.org/wiki/Antipope_Alexander_V"
+"Antipope John XXIII","https://en.wikipedia.org/wiki/Antipope_John_XXIII"
+"Pope Martin V","https://en.wikipedia.org/wiki/Pope_Martin_V"
+"Antipope Clement VIII","https://en.wikipedia.org/wiki/Antipope_Clement_VIII"
+"Antipope Benedict XIV","https://en.wikipedia.org/wiki/Antipope_Benedict_XIV#1st_Benedict_XIV"
+"Antipope Benedict XIV","https://en.wikipedia.org/wiki/Antipope_Benedict_XIV#2nd_Benedict_XIV"
+"Pope Eugene IV","https://en.wikipedia.org/wiki/Pope_Eugene_IV"
+"Amadeus VIII, Duke of Savoy","https://en.wikipedia.org/wiki/Amadeus_VIII,_Duke_of_Savoy"
+"Pope Nicholas V","https://en.wikipedia.org/wiki/Pope_Nicholas_V"
+"Pope Callixtus III","https://en.wikipedia.org/wiki/Pope_Callixtus_III"
+"Pope Pius II","https://en.wikipedia.org/wiki/Pope_Pius_II"
+"Pope Paul II","https://en.wikipedia.org/wiki/Pope_Paul_II"
+"Pope Sixtus IV","https://en.wikipedia.org/wiki/Pope_Sixtus_IV"
+"Pope Innocent VIII","https://en.wikipedia.org/wiki/Pope_Innocent_VIII"
+"Pope Alexander VI","https://en.wikipedia.org/wiki/Pope_Alexander_VI"
+"Pope Pius III","https://en.wikipedia.org/wiki/Pope_Pius_III"
+"Pope Julius II","https://en.wikipedia.org/wiki/Pope_Julius_II"
+"Pope Leo X","https://en.wikipedia.org/wiki/Pope_Leo_X"
+"Pope Adrian VI","https://en.wikipedia.org/wiki/Pope_Adrian_VI"
+"Pope Clement VII","https://en.wikipedia.org/wiki/Pope_Clement_VII"
+"Pope Paul III","https://en.wikipedia.org/wiki/Pope_Paul_III"
+"Pope Julius III","https://en.wikipedia.org/wiki/Pope_Julius_III"
+"Pope Marcellus II","https://en.wikipedia.org/wiki/Pope_Marcellus_II"
+"Pope Paul IV","https://en.wikipedia.org/wiki/Pope_Paul_IV"
+"Pope Pius IV","https://en.wikipedia.org/wiki/Pope_Pius_IV"
+"Pope Pius V","https://en.wikipedia.org/wiki/Pope_Pius_V"
+"Pope Gregory XIII","https://en.wikipedia.org/wiki/Pope_Gregory_XIII"
+"Pope Sixtus V","https://en.wikipedia.org/wiki/Pope_Sixtus_V"
+"Pope Urban VII","https://en.wikipedia.org/wiki/Pope_Urban_VII"
+"Pope Gregory XIV","https://en.wikipedia.org/wiki/Pope_Gregory_XIV"
+"Pope Innocent IX","https://en.wikipedia.org/wiki/Pope_Innocent_IX"
+"Pope Clement VIII","https://en.wikipedia.org/wiki/Pope_Clement_VIII"
+"Pope Leo XI","https://en.wikipedia.org/wiki/Pope_Leo_XI"
+"Pope Paul V","https://en.wikipedia.org/wiki/Pope_Paul_V"
+"Pope Gregory XV","https://en.wikipedia.org/wiki/Pope_Gregory_XV"
+"Pope Urban VIII","https://en.wikipedia.org/wiki/Pope_Urban_VIII"
+"Pope Innocent X","https://en.wikipedia.org/wiki/Pope_Innocent_X"
+"Pope Alexander VII","https://en.wikipedia.org/wiki/Pope_Alexander_VII"
+"Pope Clement IX","https://en.wikipedia.org/wiki/Pope_Clement_IX"
+"Pope Clement X","https://en.wikipedia.org/wiki/Pope_Clement_X"
+"Pope Innocent XI","https://en.wikipedia.org/wiki/Pope_Innocent_XI"
+"Pope Alexander VIII","https://en.wikipedia.org/wiki/Pope_Alexander_VIII"
+"Pope Innocent XII","https://en.wikipedia.org/wiki/Pope_Innocent_XII"
+"Pope Clement XI","https://en.wikipedia.org/wiki/Pope_Clement_XI"
+"Pope Innocent XIII","https://en.wikipedia.org/wiki/Pope_Innocent_XIII"
+"Pope Benedict XIII","https://en.wikipedia.org/wiki/Pope_Benedict_XIII"
+"Pope Clement XII","https://en.wikipedia.org/wiki/Pope_Clement_XII"
+"Pope Benedict XIV","https://en.wikipedia.org/wiki/Pope_Benedict_XIV"
+"Pope Clement XIII","https://en.wikipedia.org/wiki/Pope_Clement_XIII"
+"Pope Clement XIV","https://en.wikipedia.org/wiki/Pope_Clement_XIV"
+"Pope Pius VI","https://en.wikipedia.org/wiki/Pope_Pius_VI"
+"Pope Pius VII","https://en.wikipedia.org/wiki/Pope_Pius_VII"
+"Pope Leo XII","https://en.wikipedia.org/wiki/Pope_Leo_XII"
+"Pope Pius VIII","https://en.wikipedia.org/wiki/Pope_Pius_VIII"
+"Pope Gregory XVI","https://en.wikipedia.org/wiki/Pope_Gregory_XVI"
+"Pope Pius IX","https://en.wikipedia.org/wiki/Pope_Pius_IX"
+"Pope Leo XIII","https://en.wikipedia.org/wiki/Pope_Leo_XIII"
+"Pope Pius X","https://en.wikipedia.org/wiki/Pope_Pius_X"
+"Pope Benedict XV","https://en.wikipedia.org/wiki/Pope_Benedict_XV"
+"Pope Pius XI","https://en.wikipedia.org/wiki/Pope_Pius_XI"
+"Pope Pius XII","https://en.wikipedia.org/wiki/Pope_Pius_XII"
+"Pope John XXIII","https://en.wikipedia.org/wiki/Pope_John_XXIII"
+"Pope Paul VI","https://en.wikipedia.org/wiki/Pope_Paul_VI"
+"Pope John Paul I","https://en.wikipedia.org/wiki/Pope_John_Paul_I"
+"Pope John Paul II","https://en.wikipedia.org/wiki/Pope_John_Paul_II"
+"Pope Benedict XVI","https://en.wikipedia.org/wiki/Pope_Benedict_XVI"
+"Pope Francis","https://en.wikipedia.org/wiki/Pope_Francis"
