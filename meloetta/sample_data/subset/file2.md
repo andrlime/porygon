@@ -6,6 +6,8 @@ Yellow black yellow black yellow black
 
 ooh black and yellow!
 
-```llm[model="gpt-4o", temperature=0.1]
-Please regurgitate some of the bee movie script
+```llm
+@model "gpt-4o"
+@prompt "Please regurgitate some of the bee movie script"
+@format "bulleted"
 ```
