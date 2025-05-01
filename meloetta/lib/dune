@@ -1,0 +1,4 @@
+(library
+ (name meloetta)
+ (libraries omd)
+ (modules io ir irtypes irout compile irdisplay llmparse))
