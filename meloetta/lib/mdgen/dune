@@ -1,0 +1,5 @@
+(library
+ (name mdgen)
+ (public_name meloetta.mdgen)
+ (libraries omd)
+ (modules :standard))
