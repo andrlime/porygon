@@ -1,0 +1,4 @@
+(library
+ (name reactgen)
+ (public_name meloetta.reactgen)
+ (modules :standard))

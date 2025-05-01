@@ -1,0 +1,4 @@
+(library
+ (name hooks)
+ (public_name meloetta.hooks)
+ (modules :standard))

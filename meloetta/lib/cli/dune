@@ -1,0 +1,4 @@
+(library
+ (name cli)
+ (public_name meloetta.cli)
+ (modules :standard))

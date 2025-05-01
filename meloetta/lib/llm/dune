@@ -1,0 +1,4 @@
+(library
+ (name llm)
+ (public_name meloetta.llm)
+ (modules :standard))

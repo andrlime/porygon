@@ -1,4 +1,11 @@
 (library
  (name meloetta)
- (libraries omd)
- (modules io ir irtypes irout compile irdisplay llmparse))
+ (libraries
+  omd
+  meloetta.cli
+  meloetta.common
+  meloetta.hooks
+  meloetta.io
+  meloetta.ir
+  meloetta.llm
+  meloetta.reactgen))

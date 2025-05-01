@@ -1,0 +1,4 @@
+(library
+ (name ir)
+ (public_name meloetta.ir)
+ (modules :standard))
