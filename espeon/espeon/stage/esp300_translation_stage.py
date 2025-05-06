@@ -5,6 +5,7 @@ Interface for ESP-300 translation stage
 import atexit
 import logging
 import serial
+import time
 
 import espeon.common as constants
 from espeon.commands import CommandList  # , CommandChain
@@ -27,9 +28,16 @@ class ESP300TranslationStage:
 
         self.ping()
         self.get_device_name_and_serial_number()
+        self.motor_on()
 
         logger.info("Connected to device %s (%s)", self.device_name, self.serial_number)
         atexit.register(self.close)
+
+    def sleep_ms(self, duration: int):
+        """
+        Pause for [duration] milliseconds
+        """
+        time.sleep(duration / 1000)
 
     def write(self, command: str):
         """
@@ -45,7 +53,7 @@ class ESP300TranslationStage:
         response: str
             The string response from the device with max length MAX_RESPONSE_LEN
         """
-        logger.info("Writing command %s", command.to_string())
+        logger.info("Writing command %s", command)
 
         self.device.write(command.encode())
         response = self.device.read(constants.MAX_RESPONSE_LEN).decode().strip()
@@ -57,16 +65,23 @@ class ESP300TranslationStage:
         """
         Closes connection to the device
         """
+        self.abort_motion()
         logger.info("Closing connection to %s", self.device_name)
         self.device.close()
 
-    # Commands start here
     def abort_motion(self):
         """
         AB Stops motion of the translation stage
         """
         logger.info("Aborting motion of translation stage")
         return self.write(CommandList.AbortMotion())
+
+    def motor_on(self):
+        """
+        MO Motor on
+        """
+        logger.info("Turning motor on")
+        return self.write(CommandList.MotorOn(self.axis))
 
     def get_device_name_and_serial_number(self):
         """
@@ -76,7 +91,7 @@ class ESP300TranslationStage:
 
         response_split = response.split(", ")
         device_name, serial_number = response_split[0], response_split[1]
-        logger.debug("Fetched device name %s, serial number %s", device_name, serial_number)
+        logger.info("Fetched device name %s, serial number %s", device_name, serial_number)
 
         self.device_name = device_name
         self.serial_number = serial_number
@@ -88,4 +103,31 @@ class ESP300TranslationStage:
 
         Expect to hear a ping / some other ack from the device
         """
+        logger.info("Pinging device")
         return self.write(CommandList.Heartbeat())
+
+    def move_to_hardware_travel_limit(self, direction: str):
+        """
+        MT Move to hardware travel limit
+
+        Direction must equal + or -
+        """
+        if direction != "+" and direction != "-":
+            raise ValueError("MT direction must be + or -")
+
+        logger.info("Moving to hardware travel limit in direction %s", direction)
+
+        return self.write(CommandList.MoveHardwareTravelLimit(self.axis, direction))
+
+    def move_indefinitely(self, direction: str):
+        """
+        MV Move Indefinitely in one direction
+
+        Direction must equal + or -
+        """
+        if direction != "+" and direction != "-":
+            raise ValueError("MV direction must be + or -")
+
+        logger.info("Moving indefinitely in direction %s", direction)
+
+        return self.write(CommandList.MoveIndefinitely(self.axis, direction))

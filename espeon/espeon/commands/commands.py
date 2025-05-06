@@ -30,3 +30,32 @@ class Heartbeat(Command):
 
     def __init__(self):
         super().__init__("VER")
+
+
+class MotorOn(Command):
+    """
+    MO Motor on
+
+    xxMO or xxMO?
+    """
+
+    def __init__(self, axis: int):
+        super().__init__("MO", str(axis))
+
+
+class MoveHardwareTravelLimit(Command):
+    """
+    MT Move to hardware travel limit
+    """
+
+    def __init__(self, axis: int, direction: str):
+        super().__init__("MT", str(axis), direction)
+
+
+class MoveIndefinitely(Command):
+    """
+    MV Move indefinitely
+    """
+
+    def __init__(self, axis: int, direction: str):
+        super().__init__("MV", str(axis), direction)
